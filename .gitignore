@@ -1,0 +1,15 @@
+# Segredos: nunca sobem para o GitHub
+.env
+.env.*
+credentials.json
+*.pem
+*.key
+
+# Lixo do sistema e relatórios locais
+.DS_Store
+relatorio-conversao.json
+relatorio-verificacao.json
+foto-original.png
+foto-convertida.png
+comparativo.html
+copia-temporaria-para-foto.html
