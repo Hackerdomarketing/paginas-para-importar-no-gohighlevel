@@ -4,7 +4,7 @@ Páginas HTML vestidas com a anatomia do ClickFunnels Classic, publicadas aqui (
 
 Endereço público: `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/`
 
-- `sondas/` — cinco páginas-sonda da Fase 0 (A a D: mesmo conteúdo, quantidades diferentes da "roupa" do ClickFunnels; E: a Sonda A com as correções de cor, fonte, peso e ícones descobertas na primeira importação real)
+- `sondas/` — seis páginas-sonda da Fase 0 (A a D: mesmo conteúdo, quantidades diferentes da "roupa" do ClickFunnels; E: a Sonda A com as correções de cor, fonte, peso e ícones descobertas na primeira importação real; F: uma página de laboratório em que cada elemento escreve peso, itálico, ícone de lista e altura de linha de um jeito diferente, para descobrir qual grafia o importador mantém)
 - `paginas/<nome>/` — páginas convertidas, uma pasta por página
 
 Este repositório recebe apenas HTML, CSS e imagens. Nenhuma senha ou identificador de sessão entra aqui.
@@ -16,7 +16,7 @@ Este repositório recebe apenas HTML, CSS e imagens. Nenhuma senha ou identifica
 
 Objetivo desta rodada: descobrir **quais marcas o importador do GoHighLevel exige** para reconhecer uma página como ClickFunnels. São páginas com o mesmo conteúdo; cada uma veste uma quantidade diferente da "roupa" do ClickFunnels. Importando todas, a resposta aparece sozinha.
 
-> **Atualização de 2026-09-08:** a Sonda A já foi importada e funcionou (todos os elementos entraram no editor). Ficaram quatro diferenças de aparência, explicadas mais abaixo. A **Sonda E** é a Sonda A com essas diferenças corrigidas. Se você só vai fazer um teste agora, faça a Sonda E.
+> **Atualização de 2026-09-08 (noite):** a Sonda A e a Sonda E já foram importadas. A Sonda E acertou as cores e a fonte Open Sans, mas o importador continuou deixando todo texto em negrito, apagou os ícones de check e o itálico, e deixou a altura de linha vazia. A **Sonda F** é o próximo teste: uma página de laboratório em que cada trecho tenta uma grafia diferente. Se você só vai fazer um teste agora, faça a Sonda F (veja a seção "Resultado da Sonda E").
 
 Tempo estimado: 15 minutos. Você vai precisar estar logado no painel `https://app.hackfunnels.com.br`.
 
@@ -28,7 +28,8 @@ Tempo estimado: 15 minutos. Você vai precisar estar logado no painel `https://a
 | B | Só a estrutura do corpo + estilo nativo | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-b-classic-so-estrutura.html` |
 | C | Página comum, sem nada do ClickFunnels (controle) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-c-html-comum.html` |
 | D | Estrutura do corpo + estilo em cópia local (nenhum endereço do ClickFunnels no código) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-d-classic-com-folha-de-estilo-local.html` |
-| **E** | **A Sonda A com as correções de cor, fonte, peso e ícones (a que importa agora)** | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-e-classic-completo-com-correcoes-de-fidelidade.html` |
+| E | A Sonda A com as correções de cor, fonte, peso e ícones (já importada) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-e-classic-completo-com-correcoes-de-fidelidade.html` |
+| **F** | **Laboratório de peso, itálico, ícone de lista e altura de linha (a que importa agora)** | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-f-variantes-de-peso-italico-icone-e-altura-de-linha.html` |
 
 Lista com todos os links clicáveis: `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/`
 
@@ -50,6 +51,33 @@ A Sonda A importou com todos os elementos editáveis (título, subtítulo, pará
 3. A fonte é a **Open Sans** (letras redondinhas) e não a Lato?
 4. Os parágrafos estão em peso **normal** (só os títulos em negrito)?
 5. Das **três listas**, qual mostra o ícone de check verde: a Lista 1, a 2, a 3, mais de uma ou nenhuma?
+
+## Resultado da Sonda E (2026-09-08, noite) e o que a Sonda F testa
+
+A Sonda E foi importada, aberta no editor, salva e publicada em `https://hackersdomarketing.com/sonda-e-page-4103`. Comparando com a original:
+
+| O que conferimos | Resultado | Explicação |
+|---|---|---|
+| Texto do botão e títulos das colunas brancos | **Certo** | Empurrar o branco para `#fffffe` funcionou: o importador guarda como cor personalizada. |
+| Fonte Open Sans | **Certo** | Escrever a fonte em cada elemento funcionou. |
+| Parágrafos em peso normal | **Errado: tudo em negrito** | O importador ignora o peso escrito e dá a todo texto (títulos, parágrafos, rodapé) o peso `heavy`, que ao salvar vira 900, o mais pesado que existe. Só a lista escapa (fica sem peso) e o botão vira 700. |
+| Ícone de check nas listas | **Errado: sumiu nas três** | O importador apaga a tag `<i>` em qualquer grafia. A lista chega sem nenhum ícone definido. |
+| Itálico | **Errado: sumiu** | A tag `<i>` também é apagada dentro do texto. Só sobrevivem `<a>`, `<span>` e `<strong>`. |
+| Altura de linha | Ficou vazia nos parágrafos | A classe `lh5` do ClickFunnels não existe na folha de estilo; o importador escreve `line-height:` sem valor. |
+
+**Descoberta importante sobre publicar:** uma página importada só ganha as cores e fontes de verdade **depois de ser aberta no editor e salva**. A Sonda A, publicada direto sem salvar, aparece sem estilo nenhum (letra Times, tudo preto, bolinhas comuns, botão sem cor). Regra: **importar → abrir no editor (Edit page) → clicar em Save → só então Publish**.
+
+A **Sonda F** é uma página de laboratório: cada trecho traz uma etiqueta entre colchetes (`[F-P3]`, `[F-C6]`…) e escreve a mesma coisa de um jeito diferente. Depois de importada, salva e publicada, eu leio a página e descubro qual grafia o importador manteve. O que sobreviver vira a regra do conversor.
+
+| Grupo de etiquetas | O que testa | Quantas variantes |
+|---|---|---|
+| `F-T1` a `F-T5` | Como escrever títulos para o peso ser respeitado (e um título com ícone de check na frente) | 5 |
+| `F-P1` a `F-P12` | Doze jeitos de escrever um parágrafo em peso normal (inclusive o jeito interno do próprio ClickFunnels e o elemento "Text Block") | 12 |
+| `F-I1` | Um parágrafo com itálico, sublinhado e negrito em várias grafias, para ver quais sobrevivem | 1 |
+| `F-L1` a `F-L5` | Cinco jeitos de escrever a altura de linha | 5 |
+| `F-C1` a `F-C8` | Oito jeitos de escrever o ícone de check da lista (classes, texto ✓, desenho SVG, imagem) | 8 |
+
+**Na Sonda F, o que fazer depois de importar:** abra a etapa em "Edit page", clique em **Save** (canto superior direito), depois em **Publish**, e me mande o endereço publicado ou o endereço que aparece na barra do navegador com o editor aberto. Eu leio o resto sozinho. Se quiser conferir por conta própria: quais etiquetas `[F-P…]` aparecem em peso normal, se alguma lista `[F-C…]` mostra o check azul e se em `[F-I1]` alguma palavra ficou em itálico.
 
 ## Antes de começar: abrir a aba "Rede" do navegador
 
@@ -91,7 +119,9 @@ Deixe esse painel aberto o tempo todo. Pode diminuir a largura dele arrastando a
 2. **Importou vazia:** a etapa aparece mas o editor abre em branco ou com um único bloco. **Anote: "A importou vazia".**
 3. **Erro:** uma mensagem vermelha aparece. Vá até a aba "Network", procure na lista a linha que se chama **`create-step`** (ou `cf-download-url`, se só ela apareceu), clique nela, e no painel que abre à direita clique na aba **"Response"**. Selecione tudo o que está escrito ali (`Command` + `A`), copie (`Command` + `C`) e me mande. **Anote: "A deu erro" + o texto copiado.**
 
-**Passo 12:** Repita os passos 9, 10 e 11 para a **Sonda E** (a mais importante agora) e, se sobrar tempo, para a **Sonda B**, depois **Sonda C**, depois **Sonda D**, sempre no mesmo funil "Teste de importação". Uma por vez: o importador não aceita várias juntas.
+**Passo 12:** Repita os passos 9, 10 e 11 para a **Sonda F** (a mais importante agora; A e E já foram feitas) e, se sobrar tempo, para a **Sonda B**, depois **Sonda C**, depois **Sonda D**, sempre no mesmo funil "Teste de importação". Uma por vez: o importador não aceita várias juntas.
+
+**Passo 13:** Com a etapa criada, clique em **"Edit page"**, espere o editor abrir, clique em **"Save"** (canto superior direito) e depois em **"Publish"**. Sem esse Save, a página publicada sai sem cor e sem fonte.
 
 ## O que me mandar no fim
 
@@ -103,6 +133,7 @@ Sonda B: …
 Sonda C: …
 Sonda D: …
 Sonda E: botão branco? sim/não · títulos das colunas brancos? sim/não · fonte Open Sans? sim/não · parágrafos normais? sim/não · lista com check: 1 / 2 / 3 / nenhuma
+Sonda F: endereço publicado (ou o endereço do editor aberto)
 ```
 
 Se puder, tire um print do editor aberto com a Sonda A (a que mais provavelmente funciona) e mande junto.
