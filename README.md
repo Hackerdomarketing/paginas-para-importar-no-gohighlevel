@@ -79,7 +79,7 @@ A **Sonda F** foi uma página de laboratório: cada trecho trazia uma etiqueta e
 | Altura de linha | Só a classe do ClickFunnels conta (`lh2` = 1,5, `lh4` = 1,3, `lh6` = 1,4, `lh3` = normal). | `lh5` (não existe) vira vazio; `line-height` escrito no bloco é ignorado. |
 | Ícone de check da lista | O desenho SVG escrito dentro do item sobrevive com a cor (`fill`). A imagem `<img>` também sobrevive, mas sem ser copiada para o GoHighLevel. O `✓` em texto sobrevive, mas preto: o `<span>` que dava a cor some. | `<i>` e `<span>` com classe de ícone somem; `<em>`/`<strong>` com classe ficam, mas vazios (o GoHighLevel não tem a regra do desenho do Font Awesome). Atributos do `<li>` somem. |
 | Fonte da página sem aspas | `--contentfont: 'Open Sans'` limpo. Virou padrão do conversor. | — |
-| **Limite que sobrou** | — | O GoHighLevel põe uma **bolinha** em toda lista importada (a regra `li{list-style-type: disc}` dele), ao lado do nosso check. |
+| Bolinha da lista | Resolvido na Sonda G: a lista escrita como **parágrafo** (um item por linha, check em SVG na frente) sai sem bolinha e virou o padrão do conversor. | O `list-style-type: none` no `<ul>` e no `<li>`: o importador apaga os dois e o CSS dele força `li{list-style-type: disc}` em todo elemento de lista. |
 
 Tudo isso já está fixado no conversor: peso em `<span>`, `<i>` vira `<em>`, ícone de lista em SVG, classes reais de altura de linha, fonte sem aspas.
 
@@ -89,14 +89,24 @@ A **Sonda G** é o conteúdo da Sonda E escrito pelo conversor corrigido (títul
 |---|---|
 | `G-L1` | A lista padrão do conversor: check em SVG e `list-style-type: none` no `<ul>` e no `<li>` (tenta apagar a bolinha) |
 | `G-L2` | O check como letra da fonte Font Awesome que o GoHighLevel carrega, dentro de um `<strong class="fas">` |
-| `G-L3` | A lista escrita como parágrafo, um item por linha (rota reserva do conversor, opção `--listas-como-paragrafos`) |
+| `G-L3` | A lista escrita como parágrafo, um item por linha (era a rota reserva `--listas-como-paragrafos`; hoje é o padrão do conversor) |
 | `G-L4` | Controle: SVG em pixels sem `list-style-type: none` (aqui a bolinha deve aparecer) |
 | `G-L5` | Lista com estrela, seta, negrito, itálico e link dentro dos itens |
 | `G-S1` | Parágrafo com `line-height: 1.9em` escrito no `<span>` (o span alarga a linha?) |
 | `G-S2` | Parágrafo pelo caminho normal com negrito, itálico, sublinhado, cor e link no meio da frase |
 | `G-S3` | Parágrafo com peso 300 (leve) no `<span>` |
 
-**Na Sonda G, o que fazer depois de importar:** abra a etapa em "Edit page", clique em **Save** (canto superior direito), depois em **Publish**, e me mande o endereço publicado ou o endereço que aparece na barra do navegador com o editor aberto. Eu leio o resto sozinho. Se quiser conferir por conta própria: se o parágrafo do topo saiu em peso normal com "negrito" e "itálico" no meio, se as listas `[G-L1]` e `[G-L5]` mostram check azul e estrela **sem bolinha do lado**, e se `[G-L2]` mostra um check preto.
+**Resultado da Sonda G** (importada em 2026-09-08 e publicada em `hackersdomarketing.com/sonda-g-page`):
+
+| Etiqueta | Resultado |
+|---|---|
+| `G-L1`, `G-L2`, `G-L4`, `G-L5` | Check, estrela, seta, negrito, itálico e link sobrevivem, mas **com a bolinha** do lado: o importador apaga o `list-style-type: none` e o CSS dele força `disc` em toda lista. O check em letra do Font Awesome (`G-L2`) aparece, preto. |
+| `G-L3` | **Sem bolinha.** Única rota limpa; virou o padrão do conversor. A opção `--listas-como-listas` devolve o elemento de lista (editável como lista, mas com a bolinha). |
+| `G-S1` | O `line-height: 1.9em` escrito no `<span>` sobrevive: dá para alargar a linha além das classes `lh…`. |
+| `G-S2` | Negrito, itálico, sublinhado, cor e link no meio da frase sobrevivem. |
+| `G-S3` | Peso 300 (leve) no `<span>` sobrevive. |
+
+**Editor × página publicada:** dentro do editor do GoHighLevel os títulos aparecem todos em negrito e os checks e estrelas não aparecem, mesmo depois de salvar e recarregar; a página publicada mostra tudo certo. Motivo: o importador escreve `font-weight: heavy` (valor que não existe em CSS) em cada elemento, o editor desenha isso como negrito, mas o navegador ignora e obedece ao `<span>` de dentro; e a caixa de texto do editor não desenha o SVG nem o glifo, embora os guarde no modelo da página. Regra prática: confira sempre na página publicada, não no editor. Até testarmos se editar um desses textos dentro do editor preserva os ícones, evite reescrevê-los por lá.
 
 ## Antes de começar: abrir a aba "Rede" do navegador
 
