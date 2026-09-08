@@ -4,7 +4,7 @@ Páginas HTML vestidas com a anatomia do ClickFunnels Classic, publicadas aqui (
 
 Endereço público: `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/`
 
-- `sondas/` — seis páginas-sonda da Fase 0 (A a D: mesmo conteúdo, quantidades diferentes da "roupa" do ClickFunnels; E: a Sonda A com as correções de cor, fonte, peso e ícones descobertas na primeira importação real; F: uma página de laboratório em que cada elemento escreve peso, itálico, ícone de lista e altura de linha de um jeito diferente, para descobrir qual grafia o importador mantém)
+- `sondas/` — sete páginas-sonda da Fase 0 (A a D: mesmo conteúdo, quantidades diferentes da "roupa" do ClickFunnels; E: a Sonda A com as correções de cor e fonte descobertas na primeira importação real; F: laboratório em que cada elemento escreve peso, itálico, ícone de lista e altura de linha de um jeito diferente; G: o conversor já com as regras que a Sonda F revelou, mais um laboratório curto para a bolinha das listas)
 - `paginas/<nome>/` — páginas convertidas, uma pasta por página
 
 Este repositório recebe apenas HTML, CSS e imagens. Nenhuma senha ou identificador de sessão entra aqui.
@@ -16,7 +16,7 @@ Este repositório recebe apenas HTML, CSS e imagens. Nenhuma senha ou identifica
 
 Objetivo desta rodada: descobrir **quais marcas o importador do GoHighLevel exige** para reconhecer uma página como ClickFunnels. São páginas com o mesmo conteúdo; cada uma veste uma quantidade diferente da "roupa" do ClickFunnels. Importando todas, a resposta aparece sozinha.
 
-> **Atualização de 2026-09-08 (noite):** a Sonda A e a Sonda E já foram importadas. A Sonda E acertou as cores e a fonte Open Sans, mas o importador continuou deixando todo texto em negrito, apagou os ícones de check e o itálico, e deixou a altura de linha vazia. A **Sonda F** é o próximo teste: uma página de laboratório em que cada trecho tenta uma grafia diferente. Se você só vai fazer um teste agora, faça a Sonda F (veja a seção "Resultado da Sonda E").
+> **Atualização de 2026-09-08 (madrugada):** as Sondas A, E e F já foram importadas. A Sonda F respondeu tudo: o peso só sobrevive escrito num `<span>` dentro do texto, o itálico só sobrevive como `<em>`, o ícone da lista só sobrevive como desenho SVG e, da altura de linha, só a classe vale. O conversor já escreve tudo desse jeito. A **Sonda G** é a prova final: o mesmo conteúdo da Sonda E gerado pelo conversor corrigido, mais um laboratório curto para a bolinha que o GoHighLevel põe em toda lista. Se você só vai fazer um teste agora, faça a Sonda G (veja a seção "Resultado da Sonda F").
 
 Tempo estimado: 15 minutos. Você vai precisar estar logado no painel `https://app.hackfunnels.com.br`.
 
@@ -28,8 +28,9 @@ Tempo estimado: 15 minutos. Você vai precisar estar logado no painel `https://a
 | B | Só a estrutura do corpo + estilo nativo | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-b-classic-so-estrutura.html` |
 | C | Página comum, sem nada do ClickFunnels (controle) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-c-html-comum.html` |
 | D | Estrutura do corpo + estilo em cópia local (nenhum endereço do ClickFunnels no código) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-d-classic-com-folha-de-estilo-local.html` |
-| E | A Sonda A com as correções de cor, fonte, peso e ícones (já importada) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-e-classic-completo-com-correcoes-de-fidelidade.html` |
-| **F** | **Laboratório de peso, itálico, ícone de lista e altura de linha (a que importa agora)** | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-f-variantes-de-peso-italico-icone-e-altura-de-linha.html` |
+| E | A Sonda A com as correções de cor e fonte (já importada) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-e-classic-completo-com-correcoes-de-fidelidade.html` |
+| F | Laboratório de peso, itálico, ícone de lista e altura de linha (já importada) | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-f-variantes-de-peso-italico-icone-e-altura-de-linha.html` |
+| **G** | **O conversor já com as regras da Sonda F, mais um laboratório curto (a que importa agora)** | `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-g-conversor-com-as-regras-da-sonda-f.html` |
 
 Lista com todos os links clicáveis: `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/`
 
@@ -52,7 +53,7 @@ A Sonda A importou com todos os elementos editáveis (título, subtítulo, pará
 4. Os parágrafos estão em peso **normal** (só os títulos em negrito)?
 5. Das **três listas**, qual mostra o ícone de check verde: a Lista 1, a 2, a 3, mais de uma ou nenhuma?
 
-## Resultado da Sonda E (2026-09-08, noite) e o que a Sonda F testa
+## Resultado da Sonda E (2026-09-08, noite)
 
 A Sonda E foi importada, aberta no editor, salva e publicada em `https://hackersdomarketing.com/sonda-e-page-4103`. Comparando com a original:
 
@@ -67,17 +68,35 @@ A Sonda E foi importada, aberta no editor, salva e publicada em `https://hackers
 
 **Descoberta importante sobre publicar:** uma página importada só ganha as cores e fontes de verdade **depois de ser aberta no editor e salva**. A Sonda A, publicada direto sem salvar, aparece sem estilo nenhum (letra Times, tudo preto, bolinhas comuns, botão sem cor). Regra: **importar → abrir no editor (Edit page) → clicar em Save → só então Publish**.
 
-A **Sonda F** é uma página de laboratório: cada trecho traz uma etiqueta entre colchetes (`[F-P3]`, `[F-C6]`…) e escreve a mesma coisa de um jeito diferente. Depois de importada, salva e publicada, eu leio a página e descubro qual grafia o importador manteve. O que sobreviver vira a regra do conversor.
+A **Sonda F** foi uma página de laboratório: cada trecho trazia uma etiqueta entre colchetes (`[F-P3]`, `[F-C6]`…) e escrevia a mesma coisa de um jeito diferente. Importada, salva e publicada em `https://hackersdomarketing.com/sonda-f-page`, ela respondeu o que o importador mantém.
 
-| Grupo de etiquetas | O que testa | Quantas variantes |
+## Resultado da Sonda F (2026-09-08, madrugada) e o que a Sonda G testa
+
+| O que testamos | Vencedor (o que o importador mantém) | O que ele apaga |
 |---|---|---|
-| `F-T1` a `F-T5` | Como escrever títulos para o peso ser respeitado (e um título com ícone de check na frente) | 5 |
-| `F-P1` a `F-P12` | Doze jeitos de escrever um parágrafo em peso normal (inclusive o jeito interno do próprio ClickFunnels e o elemento "Text Block") | 12 |
-| `F-I1` | Um parágrafo com itálico, sublinhado e negrito em várias grafias, para ver quais sobrevivem | 1 |
-| `F-L1` a `F-L5` | Cinco jeitos de escrever a altura de linha | 5 |
-| `F-C1` a `F-C8` | Oito jeitos de escrever o ícone de check da lista (classes, texto ✓, desenho SVG, imagem) | 8 |
+| Peso do texto (títulos e parágrafos) | Só o peso escrito num `<span style="font-weight: 400">` **dentro** do texto. O elemento continua recebendo `heavy` por fora, mas o span por dentro vence. `<b>` vira `<strong>` e sai em negrito máximo. | O peso escrito no elemento, no wrapper, em `bold_style_`, em `data-bold`, em `<p>`. O elemento "Text Block" some inteiro. |
+| Itálico e sublinhado | `<em>` e `<u>` sobrevivem dentro de parágrafos, assim como `<strong>`, `<span style>` e `<a>`. | A tag `<i>`, em qualquer lugar. |
+| Altura de linha | Só a classe do ClickFunnels conta (`lh2` = 1,5, `lh4` = 1,3, `lh6` = 1,4, `lh3` = normal). | `lh5` (não existe) vira vazio; `line-height` escrito no bloco é ignorado. |
+| Ícone de check da lista | O desenho SVG escrito dentro do item sobrevive com a cor (`fill`). A imagem `<img>` também sobrevive, mas sem ser copiada para o GoHighLevel. O `✓` em texto sobrevive, mas preto: o `<span>` que dava a cor some. | `<i>` e `<span>` com classe de ícone somem; `<em>`/`<strong>` com classe ficam, mas vazios (o GoHighLevel não tem a regra do desenho do Font Awesome). Atributos do `<li>` somem. |
+| Fonte da página sem aspas | `--contentfont: 'Open Sans'` limpo. Virou padrão do conversor. | — |
+| **Limite que sobrou** | — | O GoHighLevel põe uma **bolinha** em toda lista importada (a regra `li{list-style-type: disc}` dele), ao lado do nosso check. |
 
-**Na Sonda F, o que fazer depois de importar:** abra a etapa em "Edit page", clique em **Save** (canto superior direito), depois em **Publish**, e me mande o endereço publicado ou o endereço que aparece na barra do navegador com o editor aberto. Eu leio o resto sozinho. Se quiser conferir por conta própria: quais etiquetas `[F-P…]` aparecem em peso normal, se alguma lista `[F-C…]` mostra o check azul e se em `[F-I1]` alguma palavra ficou em itálico.
+Tudo isso já está fixado no conversor: peso em `<span>`, `<i>` vira `<em>`, ícone de lista em SVG, classes reais de altura de linha, fonte sem aspas.
+
+A **Sonda G** é o conteúdo da Sonda E escrito pelo conversor corrigido (título, subtítulo, parágrafo com negrito e itálico, imagem, lista, botão, duas colunas, rodapé), mais uma seção "Laboratório da Sonda G" com etiquetas `[G-…]`:
+
+| Etiqueta | O que testa |
+|---|---|
+| `G-L1` | A lista padrão do conversor: check em SVG e `list-style-type: none` no `<ul>` e no `<li>` (tenta apagar a bolinha) |
+| `G-L2` | O check como letra da fonte Font Awesome que o GoHighLevel carrega, dentro de um `<strong class="fas">` |
+| `G-L3` | A lista escrita como parágrafo, um item por linha (rota reserva do conversor, opção `--listas-como-paragrafos`) |
+| `G-L4` | Controle: SVG em pixels sem `list-style-type: none` (aqui a bolinha deve aparecer) |
+| `G-L5` | Lista com estrela, seta, negrito, itálico e link dentro dos itens |
+| `G-S1` | Parágrafo com `line-height: 1.9em` escrito no `<span>` (o span alarga a linha?) |
+| `G-S2` | Parágrafo pelo caminho normal com negrito, itálico, sublinhado, cor e link no meio da frase |
+| `G-S3` | Parágrafo com peso 300 (leve) no `<span>` |
+
+**Na Sonda G, o que fazer depois de importar:** abra a etapa em "Edit page", clique em **Save** (canto superior direito), depois em **Publish**, e me mande o endereço publicado ou o endereço que aparece na barra do navegador com o editor aberto. Eu leio o resto sozinho. Se quiser conferir por conta própria: se o parágrafo do topo saiu em peso normal com "negrito" e "itálico" no meio, se as listas `[G-L1]` e `[G-L5]` mostram check azul e estrela **sem bolinha do lado**, e se `[G-L2]` mostra um check preto.
 
 ## Antes de começar: abrir a aba "Rede" do navegador
 
@@ -119,7 +138,7 @@ Deixe esse painel aberto o tempo todo. Pode diminuir a largura dele arrastando a
 2. **Importou vazia:** a etapa aparece mas o editor abre em branco ou com um único bloco. **Anote: "A importou vazia".**
 3. **Erro:** uma mensagem vermelha aparece. Vá até a aba "Network", procure na lista a linha que se chama **`create-step`** (ou `cf-download-url`, se só ela apareceu), clique nela, e no painel que abre à direita clique na aba **"Response"**. Selecione tudo o que está escrito ali (`Command` + `A`), copie (`Command` + `C`) e me mande. **Anote: "A deu erro" + o texto copiado.**
 
-**Passo 12:** Repita os passos 9, 10 e 11 para a **Sonda F** (a mais importante agora; A e E já foram feitas) e, se sobrar tempo, para a **Sonda B**, depois **Sonda C**, depois **Sonda D**, sempre no mesmo funil "Teste de importação". Uma por vez: o importador não aceita várias juntas.
+**Passo 12:** Repita os passos 9, 10 e 11 para a **Sonda G** (a mais importante agora; A, E e F já foram feitas) e, se sobrar tempo, para a **Sonda B**, depois **Sonda C**, depois **Sonda D**, sempre no mesmo funil "Teste de importação". Uma por vez: o importador não aceita várias juntas.
 
 **Passo 13:** Com a etapa criada, clique em **"Edit page"**, espere o editor abrir, clique em **"Save"** (canto superior direito) e depois em **"Publish"**. Sem esse Save, a página publicada sai sem cor e sem fonte.
 
@@ -133,7 +152,8 @@ Sonda B: …
 Sonda C: …
 Sonda D: …
 Sonda E: botão branco? sim/não · títulos das colunas brancos? sim/não · fonte Open Sans? sim/não · parágrafos normais? sim/não · lista com check: 1 / 2 / 3 / nenhuma
-Sonda F: endereço publicado (ou o endereço do editor aberto)
+Sonda F: já feita (hackersdomarketing.com/sonda-f-page)
+Sonda G: endereço publicado (ou o endereço do editor aberto)
 ```
 
 Se puder, tire um print do editor aberto com a Sonda A (a que mais provavelmente funciona) e mande junto.
