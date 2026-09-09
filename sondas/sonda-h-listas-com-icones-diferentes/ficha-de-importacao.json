@@ -1,0 +1,40 @@
+{
+  "titulo": "Sonda H - listas com icones diferentes",
+  "gerada_em": "2026-09-09T12:42:50",
+  "url_publica": "https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-h-listas-com-icones-diferentes/",
+  "listas_como_paragrafos": false,
+  "listas": [
+    {
+      "ordem": 1,
+      "icone": "check",
+      "primeiro_item": "Primeiro item da lista do check",
+      "quantidade_de_itens": 3,
+      "como": "lista",
+      "observacao": null
+    },
+    {
+      "ordem": 2,
+      "icone": "star",
+      "primeiro_item": "Primeiro item da lista da estrela",
+      "quantidade_de_itens": 2,
+      "como": "lista",
+      "observacao": null
+    },
+    {
+      "ordem": 3,
+      "icone": "shield-alt",
+      "primeiro_item": "Primeiro item da lista do escudo",
+      "quantidade_de_itens": 3,
+      "como": "lista",
+      "observacao": null
+    },
+    {
+      "ordem": 4,
+      "icone": "bolt",
+      "primeiro_item": "Primeiro item da lista do raio",
+      "quantidade_de_itens": 2,
+      "como": "lista",
+      "observacao": null
+    }
+  ]
+}
