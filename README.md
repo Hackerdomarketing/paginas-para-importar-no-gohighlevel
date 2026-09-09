@@ -5,7 +5,7 @@ Páginas HTML vestidas com a anatomia do ClickFunnels Classic, publicadas aqui (
 Endereço público: `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/`
 
 - `sondas/` — sete páginas-sonda da Fase 0 (A a D: mesmo conteúdo, quantidades diferentes da "roupa" do ClickFunnels; E: a Sonda A com as correções de cor e fonte descobertas na primeira importação real; F: laboratório em que cada elemento escreve peso, itálico, ícone de lista e altura de linha de um jeito diferente; G: o conversor já com as regras que a Sonda F revelou, mais um laboratório curto para a bolinha das listas)
-- `paginas/<nome>/` — páginas convertidas, uma pasta por página
+- `paginas/<nome>/` — páginas convertidas, uma pasta por página: o `index.html` e a **ficha de importação** (`ficha-de-importacao.md` para ler, `.json` para o robô), que diz o ícone de cada lista da página para escolher no painel do editor depois de importar
 
 Este repositório recebe apenas HTML, CSS e imagens. Nenhuma senha ou identificador de sessão entra aqui.
 
@@ -17,6 +17,8 @@ Este repositório recebe apenas HTML, CSS e imagens. Nenhuma senha ou identifica
 Objetivo desta rodada: descobrir **quais marcas o importador do GoHighLevel exige** para reconhecer uma página como ClickFunnels. São páginas com o mesmo conteúdo; cada uma veste uma quantidade diferente da "roupa" do ClickFunnels. Importando todas, a resposta aparece sozinha.
 
 > **Atualização de 2026-09-08 (madrugada):** as Sondas A, E e F já foram importadas. A Sonda F respondeu tudo: o peso só sobrevive escrito num `<span>` dentro do texto, o itálico só sobrevive como `<em>`, o ícone da lista só sobrevive como desenho SVG e, da altura de linha, só a classe vale. O conversor já escreve tudo desse jeito. A **Sonda G** é a prova final: o mesmo conteúdo da Sonda E gerado pelo conversor corrigido, mais um laboratório curto para a bolinha que o GoHighLevel põe em toda lista. Se você só vai fazer um teste agora, faça a Sonda G (veja a seção "Resultado da Sonda F").
+>
+> **Atualização de 2026-09-09:** a Sonda G respondeu a bolinha da lista. A saída é o ícone nativo da lista, escolhido no painel do editor depois de importar (Geral → Ícone → busca → escolher → Save). O conversor passou a emitir cada lista limpa e a gravar o ícone de cada uma numa ficha de importação ao lado da página. Detalhes na seção "Resultado da Sonda G".
 
 Tempo estimado: 15 minutos. Você vai precisar estar logado no painel `https://app.hackfunnels.com.br`.
 
@@ -79,9 +81,9 @@ A **Sonda F** foi uma página de laboratório: cada trecho trazia uma etiqueta e
 | Altura de linha | Só a classe do ClickFunnels conta (`lh2` = 1,5, `lh4` = 1,3, `lh6` = 1,4, `lh3` = normal). | `lh5` (não existe) vira vazio; `line-height` escrito no bloco é ignorado. |
 | Ícone de check da lista | O desenho SVG escrito dentro do item sobrevive com a cor (`fill`). A imagem `<img>` também sobrevive, mas sem ser copiada para o GoHighLevel. O `✓` em texto sobrevive, mas preto: o `<span>` que dava a cor some. | `<i>` e `<span>` com classe de ícone somem; `<em>`/`<strong>` com classe ficam, mas vazios (o GoHighLevel não tem a regra do desenho do Font Awesome). Atributos do `<li>` somem. |
 | Fonte da página sem aspas | `--contentfont: 'Open Sans'` limpo. Virou padrão do conversor. | — |
-| Bolinha da lista | Resolvido na Sonda G: a lista escrita como **parágrafo** (um item por linha, check em SVG na frente) sai sem bolinha e virou o padrão do conversor. | O `list-style-type: none` no `<ul>` e no `<li>`: o importador apaga os dois e o CSS dele força `li{list-style-type: disc}` em todo elemento de lista. |
+| Bolinha da lista | Resolvido na Sonda G, mas **dentro do editor**: o ícone nativo da lista (painel Geral → Ícone) troca a bolinha pelo desenho escolhido e sobrevive à edição do texto. Fora do editor, só a lista escrita como **parágrafo** escapa. | O `list-style-type: none` no `<ul>` e no `<li>`: o importador apaga os dois e o CSS dele força `li{list-style-type: disc}` em todo elemento de lista. Nenhum desenho escrito dentro do item apaga a bolinha. |
 
-Tudo isso já está fixado no conversor: peso em `<span>`, `<i>` vira `<em>`, ícone de lista em SVG, classes reais de altura de linha, fonte sem aspas.
+Tudo isso já está fixado no conversor: peso em `<span>`, `<i>` vira `<em>`, classes reais de altura de linha, fonte sem aspas, e a lista sai limpa com o ícone anotado na ficha de importação.
 
 A **Sonda G** é o conteúdo da Sonda E escrito pelo conversor corrigido (título, subtítulo, parágrafo com negrito e itálico, imagem, lista, botão, duas colunas, rodapé), mais uma seção "Laboratório da Sonda G" com etiquetas `[G-…]`:
 
@@ -89,7 +91,7 @@ A **Sonda G** é o conteúdo da Sonda E escrito pelo conversor corrigido (títul
 |---|---|
 | `G-L1` | A lista padrão do conversor: check em SVG e `list-style-type: none` no `<ul>` e no `<li>` (tenta apagar a bolinha) |
 | `G-L2` | O check como letra da fonte Font Awesome que o GoHighLevel carrega, dentro de um `<strong class="fas">` |
-| `G-L3` | A lista escrita como parágrafo, um item por linha (era a rota reserva `--listas-como-paragrafos`; hoje é o padrão do conversor) |
+| `G-L3` | A lista escrita como parágrafo, um item por linha (a rota reserva `--listas-como-paragrafos`) |
 | `G-L4` | Controle: SVG em pixels sem `list-style-type: none` (aqui a bolinha deve aparecer) |
 | `G-L5` | Lista com estrela, seta, negrito, itálico e link dentro dos itens |
 | `G-S1` | Parágrafo com `line-height: 1.9em` escrito no `<span>` (o span alarga a linha?) |
@@ -101,12 +103,16 @@ A **Sonda G** é o conteúdo da Sonda E escrito pelo conversor corrigido (títul
 | Etiqueta | Resultado |
 |---|---|
 | `G-L1`, `G-L2`, `G-L4`, `G-L5` | Check, estrela, seta, negrito, itálico e link sobrevivem, mas **com a bolinha** do lado: o importador apaga o `list-style-type: none` e o CSS dele força `disc` em toda lista. O check em letra do Font Awesome (`G-L2`) aparece, preto. |
-| `G-L3` | **Sem bolinha.** Única rota limpa; virou o padrão do conversor. A opção `--listas-como-listas` devolve o elemento de lista (editável como lista, mas com a bolinha). |
+| `G-L3` | **Sem bolinha.** Única rota que escapa da bolinha sem passar pelo editor, mas não é mais uma lista: virou a rota reserva `--listas-como-paragrafos`. |
 | `G-S1` | O `line-height: 1.9em` escrito no `<span>` sobrevive: dá para alargar a linha além das classes `lh…`. |
 | `G-S2` | Negrito, itálico, sublinhado, cor e link no meio da frase sobrevivem. |
 | `G-S3` | Peso 300 (leve) no `<span>` sobrevive. |
 
-**Editor × página publicada:** dentro do editor do GoHighLevel os títulos aparecem todos em negrito e os checks e estrelas não aparecem, mesmo depois de salvar e recarregar; a página publicada mostra tudo certo. Motivo: o importador escreve `font-weight: heavy` (valor que não existe em CSS) em cada elemento, o editor desenha isso como negrito, mas o navegador ignora e obedece ao `<span>` de dentro; e a caixa de texto do editor não desenha o SVG nem o glifo, embora os guarde no modelo da página. Regra prática: confira sempre na página publicada, não no editor. Até testarmos se editar um desses textos dentro do editor preserva os ícones, evite reescrevê-los por lá.
+**Saída da bolinha, confirmada no mesmo dia (19:13):** toda lista importada tem, no painel da direita do editor, aba **"Geral"**, um campo chamado **"Ícone"**. Clicando nele abre uma grade de desenhos com uma busca em cima. Escolhendo um desenho ali e clicando em **"Save"**, o CSS da página publicada passa a ser `li{list-style-type: "<o desenho>"}` com `li::marker{font-family:"Font Awesome 5 Free"}`: a bolinha some, o desenho aparece no lugar dela, e **isso sobrevive quando você edita o texto da lista**.
+
+Por isso o padrão do conversor mudou: cada lista sai como lista de verdade e **limpa**, e o nome do ícone vai numa **ficha de importação** ao lado da página. Depois de importar, escolha o ícone de cada lista no painel: clique na lista no meio da tela, no painel da direita abra a aba **"Geral"**, clique no campo **"Ícone"**, digite o nome que está na ficha, clique no desenho e depois em **"Save"** no canto superior direito. A grade tem 1458 desenhos e mostra só 100 de cada vez com a busca vazia, então sempre digite o nome. A ficha numera as listas pela ordem em que aparecem: compare o trecho `primeiro_item` dela com o texto na tela antes de aplicar.
+
+**Editor × página publicada:** dentro do editor do GoHighLevel os títulos aparecem todos em negrito e os checks e estrelas não aparecem, mesmo depois de salvar e recarregar; a página publicada mostra tudo certo. Motivo: o importador escreve `font-weight: heavy` (valor que não existe em CSS) em cada elemento, o editor desenha isso como negrito, mas o navegador ignora e obedece ao `<span>` de dentro; e a caixa de texto do editor não desenha o SVG nem o glifo, embora os guarde no modelo da página. Regra prática: confira sempre na página publicada, não no editor. **Testado em 2026-09-08:** reescrever no editor um texto que tinha desenho dentro apaga os desenhos daquele elemento. O ícone nativo da lista não sofre disso: ele mora numa configuração do elemento, não no texto.
 
 ## Antes de começar: abrir a aba "Rede" do navegador
 
