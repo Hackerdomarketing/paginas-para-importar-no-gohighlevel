@@ -68,7 +68,7 @@ A Sonda E foi importada, aberta no editor, salva e publicada em `https://hackers
 | Itálico | **Errado: sumiu** | A tag `<i>` também é apagada dentro do texto. Só sobrevivem `<a>`, `<span>` e `<strong>`. |
 | Altura de linha | Ficou vazia nos parágrafos | A classe `lh5` do ClickFunnels não existe na folha de estilo; o importador escreve `line-height:` sem valor. |
 
-**Descoberta importante sobre publicar:** uma página importada só ganha as cores e fontes de verdade **depois de ser aberta no editor e salva**. A Sonda A, publicada direto sem salvar, aparece sem estilo nenhum (letra Times, tudo preto, bolinhas comuns, botão sem cor). Regra: **importar → abrir no editor (Edit page) → clicar em Save → só então Publish**.
+**Descoberta importante sobre publicar:** uma página importada só ganha as cores e fontes de verdade **depois de ser aberta no editor e salva**. A Sonda A, publicada direto sem salvar, aparece sem estilo nenhum (letra Times, tudo preto, bolinhas comuns, botão sem cor). Regra: **importar → abrir no editor (Edit page) → escolher os ícones das listas → preencher o SEO → clicar em Save → só então Publish**.
 
 A **Sonda F** foi uma página de laboratório: cada trecho trazia uma etiqueta entre colchetes (`[F-P3]`, `[F-C6]`…) e escrevia a mesma coisa de um jeito diferente. Importada, salva e publicada em `https://hackersdomarketing.com/sonda-f-page`, ela respondeu o que o importador mantém.
 
@@ -156,7 +156,18 @@ Deixe esse painel aberto o tempo todo. Pode diminuir a largura dele arrastando a
 
 **Passo 12:** Repita os passos 9, 10 e 11 para a **Sonda G** (a mais importante agora; A, E e F já foram feitas) e, se sobrar tempo, para a **Sonda B**, depois **Sonda C**, depois **Sonda D**, sempre no mesmo funil "Teste de importação". Uma por vez: o importador não aceita várias juntas.
 
-**Passo 13:** Com a etapa criada, clique em **"Edit page"**, espere o editor abrir, clique em **"Save"** (canto superior direito) e depois em **"Publish"**. Sem esse Save, a página publicada sai sem cor e sem fonte.
+**Passo 13:** Com a etapa criada, clique em **"Edit page"** (botão azul, canto superior direito) e espere o editor abrir. Ele demora alguns segundos: primeiro a tela fica cinza, depois a página aparece no meio com uma barra de ferramentas no alto.
+
+**Passo 14 — preencher o SEO (o importador apagou):** o GoHighLevel joga fora a cabeça da página inteira quando importa. Título da aba, descrição do Google e imagem do WhatsApp chegam vazios, sempre. Os valores certos estão na ficha de importação da página (`ficha-de-importacao.md`, na mesma pasta do `index.html`), na seção "SEO: título, descrição e imagem de compartilhamento".
+
+- Na barra de ferramentas cinza do alto, procure o desenho de uma **folha de papel com uma lupa** em cima. Passe o mouse nele e vai aparecer a etiqueta **"SEO e otimização de busca por IA"**. Clique.
+- Abre um painel do lado **ESQUERDO** com o título "SEO & otimização de busca com IA". Dentro dele há faixas que abrem e fecham: Pré-visualizar, Conteúdo, Palavras-chave, Autor, Imagens, Links e tags, Idioma, Marcação de esquema.
+- Clique na faixa **"Conteúdo"** (a segunda, com uma bolinha laranja escrita 3 do lado). Ela abre com um campo de uma linha escrito **"Título"** e uma caixa maior escrita **"Descrição"**. Cole neles o que a ficha manda.
+- Clique na faixa **"Imagens"**. Aparece um campo escrito **"Imagens"** com um botãozinho de escolher imagem. Cole ali o endereço da imagem de compartilhamento (se a ficha disser "não tinha", pule).
+
+**Atenção — o lugar errado:** na lista de etapas do funil existe uma engrenagem com **"Editar detalhes da página"**. Ela **não** é o SEO: só tem "Nome" e "Caminho". O SEO mora unicamente dentro do editor, na folha com lupa.
+
+**Passo 15:** Clique no desenho de **disquete** (salvar) no canto superior direito e depois no botão azul **"Publicar"** ao lado. Sem esse Save, a página publicada sai sem cor e sem fonte — e sem ele o SEO também não gruda.
 
 ## O que me mandar no fim
 
@@ -188,7 +199,7 @@ Se puder, tire um print do editor aberto com a Sonda A (a que mais provavelmente
 
 ## Depois das sondas: importar as páginas de verdade
 
-O mesmo caminho (passos 9 a 11) serve para qualquer página convertida. Duas já estão no ar para teste:
+O mesmo caminho (passos 9 a 11 para importar, e depois 13 a 15 para abrir o editor, preencher o SEO, salvar e publicar) serve para qualquer página convertida. Duas já estão no ar para teste:
 
 - Gusten Sun (página real do ClickFunnels, desmontada e remontada pelo conversor): `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/gusten-sun/`
 - Code Academy (página comum de exemplo): `https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/education/`

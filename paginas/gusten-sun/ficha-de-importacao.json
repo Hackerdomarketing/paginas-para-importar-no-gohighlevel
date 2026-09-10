@@ -1,7 +1,14 @@
 {
   "titulo": "High Ticket Clients Funnel",
-  "gerada_em": "2026-09-09T00:05:39",
+  "gerada_em": "2026-09-10T02:35:46",
   "url_publica": "https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/gusten-sun/",
+  "seo": {
+    "titulo": "High Ticket Clients Funnel",
+    "descricao": "Now accepting a few more people into the Inner Cicle, apply now!",
+    "imagem_social": "",
+    "onde_preencher": "editor → barra de ferramentas → botão #hl-builder-seo-meta-data-button (folha com lupa, etiqueta \"SEO e otimização de busca por IA\") → painel \"SEO & otimização de busca com IA\" → faixa \"Conteúdo\" (Título e Descrição) e faixa \"Imagens\" (Imagens)",
+    "nao_e_aqui": "a engrenagem \"Editar detalhes da página\" da etapa do funil só tem Nome e Caminho"
+  },
   "listas_como_paragrafos": false,
   "listas": [
     {

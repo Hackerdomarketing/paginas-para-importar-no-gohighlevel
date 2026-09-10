@@ -1,7 +1,14 @@
 {
   "titulo": "Sonda H - listas com icones diferentes",
-  "gerada_em": "2026-09-09T12:42:50",
+  "gerada_em": "2026-09-10T02:35:39",
   "url_publica": "https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/sondas/sonda-h-listas-com-icones-diferentes/",
+  "seo": {
+    "titulo": "Sonda H - listas com icones diferentes",
+    "descricao": "",
+    "imagem_social": "",
+    "onde_preencher": "editor → barra de ferramentas → botão #hl-builder-seo-meta-data-button (folha com lupa, etiqueta \"SEO e otimização de busca por IA\") → painel \"SEO & otimização de busca com IA\" → faixa \"Conteúdo\" (Título e Descrição) e faixa \"Imagens\" (Imagens)",
+    "nao_e_aqui": "a engrenagem \"Editar detalhes da página\" da etapa do funil só tem Nome e Caminho"
+  },
   "listas_como_paragrafos": false,
   "listas": [
     {
