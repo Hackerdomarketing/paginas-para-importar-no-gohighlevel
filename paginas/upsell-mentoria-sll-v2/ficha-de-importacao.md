@@ -1,6 +1,6 @@
 # Ficha de importação: Mentoria SLL com o Zé Dos Milhões
 
-Página convertida em 18/09/2026 12:25.
+Página convertida em 18/09/2026 12:35.
 Endereço para colar no importador do GoHighLevel: https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/upsell-mentoria-sll-v2/
 
 Caminho no painel: Sites → Funnels → o funil → "+ Add new step" → campo "Clickfunnels link" → "Create funnel step". Depois de importar: "Edit page" → escolher os ícones das listas → preencher o SEO → Save → Publish (sem o Save a página sai sem cor nem fonte).
