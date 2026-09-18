@@ -13,3 +13,11 @@ foto-original.png
 foto-convertida.png
 comparativo.html
 copia-temporaria-para-foto.html
+
+# Paginas reais do ClickFunnels baixadas so para estudo (conteudo de terceiros; nao publicar)
+referencias-clickfunnels-reais/
+
+# Material de trabalho (recortes e capturas), nao publica
+recortes-mentoria/
+.playwright-mcp/
+.vscode/
