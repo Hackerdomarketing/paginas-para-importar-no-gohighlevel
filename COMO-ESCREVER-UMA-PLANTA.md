@@ -86,13 +86,12 @@ Tipos: `titulo`, `subtitulo`, `paragrafo`, `texto`, `imagem`, `lista`, `botao`, 
 ## Passo 7 — rodar o pipeline e conferir
 
 ```bash
-SIS=/opt/homebrew/bin/python3                            # tem playwright + yaml
-VENV=~/.claude/skills/html2elementor/.venv/bin/python3   # tem bs4
 S=~/.claude/skills/html-para-clickfunnels
+PY=$S/.venv/bin/python3        # venv próprio da skill; se não existir: bash $S/instalar.sh
 
-$SIS  $S/medir_planta_no_navegador.py planta.yaml -o saida/planta-medida.json
-$VENV $S/gerar_da_planta.py            saida/planta-medida.json -o saida/
-$SIS  $S/conferir_visualmente.py       saida/planta-medida.json saida/index.html
+$PY $S/medir_planta_no_navegador.py planta.yaml -o saida/planta-medida.json
+$PY $S/gerar_da_planta.py            saida/planta-medida.json -o saida/
+$PY $S/conferir_visualmente.py       saida/planta-medida.json saida/index.html
 ```
 
 Abra `saida/conferencia/conferencia-visual.html` e olhe cada par (original × gerada, seção por seção). Preencha cada
