@@ -107,3 +107,26 @@ enquanto houver veredito em branco.
 - Tentar cinco colunas numa linha. Não existe; use `[4,4,4]` + `[6,6]`.
 - Deixar barra de progresso / ícone solto / degradê como elemento. Viram imagem.
 - Escrever o texto à mão. Aponte o seletor; a medição copia (e congela negrito/itálico/cor de cada trecho).
+
+## Regras de ouro (aprendidas na Mentoria, 2026-09-18 — não repetir os erros)
+
+1. **Página inteira quer dizer inteira.** Não seja seletivo com quais elementos replicar. Se a página tem um
+   bloco, ele entra — como elemento se for texto/lista/imagem simples, como imagem se for denso/desenho, mas
+   NUNCA fica de fora. Cada seção da planta tem que cobrir tudo que existe na seção do original.
+
+2. **Conferir na página INTEIRA rolando, sobre o fundo real — nunca em recorte isolado.** Um cartão branco com
+   sombra suave, recortado sozinho sobre fundo branco, some: a borda clara e a sombra não aparecem. Foi assim
+   que a falta da caixa dos detail-cards passou batida. A conferência de verdade é servir a página gerada
+   (com lander.css local) e rolar por ela do topo ao rodapé, vendo cada bloco contra o fundo que ele tem na
+   página (a zona de detalhes é cinza; é o cinza que faz a caixa branca aparecer).
+
+3. **Cartão = caixa com fundo + cantos + sombra.** Quando um bloco do original é um cartão (fundo, border-radius,
+   box-shadow), a moldura precisa envolver o cartão inteiro:
+   - cartão de UMA linha (miniatura | texto) → moldura na LINHA (`moldura:` na linha).
+   - cartão que envolve VÁRIAS linhas (título + corpo + extras, como o detail-card) → moldura na SEÇÃO
+     (`fundo: { seletor: ".detail-card", indice: N }`); o medidor mede fundo+borda+raio+sombra e a seção vira caixa.
+   Confirme na conferência que a caixa aparece — não confie que "está no código".
+
+4. **Sombra: cuidado com spread negativo e sombras múltiplas.** O original às vezes usa `box-shadow` com spread
+   negativo (encolhe a sombra) ou duas sombras separadas por vírgula. `_sombra_do_css` já pega só a 1ª e zera
+   spread negativo, senão a sombra some sobre o branco.
