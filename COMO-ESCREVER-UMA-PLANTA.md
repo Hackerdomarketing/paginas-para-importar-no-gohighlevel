@@ -139,3 +139,16 @@ enquanto houver veredito em branco.
    piscar, flutuar, confetti, sanfona) e entregue, além da página, os códigos prontos e o passo a passo para colar no
    editor do GoHighLevel. Não importa se o importador aceita: o efeito existe na versão do GoHighLevel porque a
    pessoa cola — e o guia diz exatamente onde.
+
+6. **A conferência é contra o original REAL, lado a lado, e o veredito é dado olhando.** Use
+   `comparar_lado_a_lado.py`: ele recorta a seção inteira do original (não o que a planta mapeou) e cola ao lado da
+   gerada. Uma conferência que recorta pela planta é circular — confere se a gerada bate com a sua lista, não com o
+   site — e foi assim que 6 blocos faltaram sem ninguém ver. Nunca preencha veredito por script.
+
+7. **Planta se escreve pelos filhos visíveis, um por um.** Antes de escrever uma seção, liste no navegador os filhos
+   visíveis dela (tag, classe, primeiras palavras) e mapeie cada um. Não replique a estrutura de um bloco nos outros
+   "porque são parecidos": o card 1 tinha painel verde e exemplo; o 6 tinha caixa bege; o 7 tinha lista — replicar o
+   1 nos outros enfiou conteúdo de um card dentro dos outros.
+
+8. **Original = o arquivo que a pessoa mandou.** Não troque por uma cópia de outro lugar sem conferir que é igual.
+   Recortes-imagem: com JavaScript desligado.

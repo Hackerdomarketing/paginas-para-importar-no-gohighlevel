@@ -1,6 +1,6 @@
 {
   "titulo": "Mentoria SLL com o Zé Dos Milhões",
-  "gerada_em": "2026-09-19T01:00:17",
+  "gerada_em": "2026-09-19T05:37:19",
   "url_publica": "https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/upsell-mentoria-sll-v2/",
   "seo": {
     "titulo": "Mentoria SLL com o Zé Dos Milhões",
@@ -10,5 +10,14 @@
     "nao_e_aqui": "a engrenagem \"Editar detalhes da página\" da etapa do funil só tem Nome e Caminho"
   },
   "listas_como_paragrafos": false,
-  "listas": []
+  "listas": [
+    {
+      "ordem": 1,
+      "icone": "check",
+      "primeiro_item": "Recebe os produtos direto do fornecedor",
+      "quantidade_de_itens": 4,
+      "como": "lista",
+      "observacao": "sem ícone reconhecível no original; o check é sugestão"
+    }
+  ]
 }
