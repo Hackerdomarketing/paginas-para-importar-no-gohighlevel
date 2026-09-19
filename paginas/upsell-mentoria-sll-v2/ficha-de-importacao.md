@@ -1,6 +1,6 @@
 # Ficha de importação: Mentoria SLL com o Zé Dos Milhões
 
-Página convertida em 18/09/2026 17:44.
+Página convertida em 19/09/2026 01:00.
 Endereço para colar no importador do GoHighLevel: https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/upsell-mentoria-sll-v2/
 
 Caminho no painel: Sites → Funnels → o funil → "+ Add new step" → campo "Clickfunnels link" → "Create funnel step". Depois de importar: "Edit page" → escolher os ícones das listas → preencher o SEO → Save → Publish (sem o Save a página sai sem cor nem fonte).
@@ -34,3 +34,7 @@ Passo 5: clique na faixa "Imagens". Aparece um campo escrito "Imagens" com um bo
 Passo 6: clique no desenho de disquete (o ícone de salvar) no canto superior direito para gravar e, depois, no botão azul "Publicar" ao lado dele, para a página no ar receber a mudança.
 
 Atenção — o lugar ERRADO: na lista de etapas do funil existe uma engrenagem com "Editar detalhes da página". Ela NÃO é o SEO: só tem "Nome" e "Caminho" (o endereço da página). O SEO fica só dentro do editor, no desenho da folha com lupa.
+
+## Efeitos (animações e scripts) — colar no editor depois de importar
+
+O original tem 5 animação(ões) e 1 script(s). Eles NÃO atravessam a importação. Está tudo pronto em `efeitos/`: `efeitos.css`, `efeitos.js` e o passo a passo em `efeitos/EFEITOS.md` (onde clicar, o que colar, como dar o gancho a cada elemento). Faça isso antes do Save/Publish final.

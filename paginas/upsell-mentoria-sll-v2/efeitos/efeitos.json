@@ -1,0 +1,128 @@
+{
+  "catalogo": [
+    {
+      "seletor": ".progress span",
+      "gancho": "fx-progress-stripes",
+      "keyframes": [
+        "progress-stripes"
+      ],
+      "faz": "faz as listras/o brilho do fundo andarem",
+      "onde": "«Você está na etapa 2 de 3»",
+      "declaracao": "display:flex;align-items:center;justify-content:center;width:66.6667%;height:100%;font-size:9px;line-height:1;font-weight:600;color:#fff;text-shadow:0 1px 2px #40216b;border-radius:20px;background:repeating-linear-gradient(120deg,#a67aff 0,#a67aff 10px,#8754df 10px,#8754df 20px);background-size:46px 100%;animation:progress-stripes 2.8s linear infinite;position:relative;box-shadow:0 0 16px #a570ef66"
+    },
+    {
+      "seletor": ".progress span:after",
+      "gancho": "fx-progress-light",
+      "keyframes": [
+        "progress-light"
+      ],
+      "faz": "desloca o elemento (flutua/anda)",
+      "onde": "«Você está na etapa 2 de 3»",
+      "declaracao": "content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(105deg,transparent 25%,#ffffff55 50%,transparent 75%);transform:translateX(-120%);animation:progress-light 4.5s ease-in-out infinite"
+    },
+    {
+      "seletor": ".play",
+      "gancho": "fx-play",
+      "keyframes": [],
+      "faz": "transição suave ao interagir",
+      "onde": "<span> sem texto (bloco visual)",
+      "declaracao": "position:absolute;left:50%;top:61%;transform:translate(-50%,-50%);width:78px;height:78px;background:#8653e7e0;border:5px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px #b38aff16,0 8px 25px #0005;transition:transform .2s,box-shadow .2s"
+    },
+    {
+      "seletor": ".buy",
+      "gancho": "fx-buy",
+      "keyframes": [],
+      "faz": "transição suave ao interagir",
+      "onde": "«SIM! Quero usar meu desconto na mentoria! Quero os 6 encontros com o Z»",
+      "declaracao": "background:linear-gradient(105deg,#92f961,#c0ff97);border:1px solid #d2ffb787;border-bottom:4px solid #77b946;border-radius:8px;color:#182313;padding:17px 15px 14px;width:100%;box-shadow:0 5px 0 #3f225530,0 9px 22px #17291420;transition:transform .2s,box-shadow .2s,filter .2s"
+    },
+    {
+      "seletor": ".decline",
+      "gancho": "fx-decline",
+      "keyframes": [],
+      "faz": "transição suave ao interagir",
+      "onde": "«Não, eu prefiro descobrir sozinha o que fazer quando as vendas travare»",
+      "declaracao": "display:block;width:100%;min-height:44px;margin-top:10px;background:color-mix(in oklch,var(--foreground) 10%,var(--background));border:1px solid color-mix(in oklch,var(--foreground) 27%,var(--background));border-radius:7px;color:color-mix(in oklch,var(--foreground) 85%,var(--background));font-size:13px;font-weight:550;line-height:1.45;letter-spacing:.01em;text-align:center;text-decoration:none;padding:11px 16px;opacity:1;box-shadow:none;transition:background .18s cubic-bezier(.23,1,.32,1),border-color .18s cubic-bezier(.23,1,.32,1),color .18s cubic-bezier(.23,1,.32,1),transform .18s cubic-bezier(.23,1,.32,1)"
+    },
+    {
+      "seletor": ".letter-intro-doubts li",
+      "gancho": "fx-doubt-float",
+      "keyframes": [
+        "doubt-float"
+      ],
+      "faz": "desloca o elemento (flutua/anda); gira levemente",
+      "onde": "«Eu baixo o preço?»",
+      "declaracao": "--float-x-a:-4px;--float-y-a:2px;--float-x-b:5px;--float-y-b:-5px;--float-x-c:-2px;--float-y-c:4px;--float-rotate-a:-1deg;--float-rotate-b:.8deg;--float-rotate-c:-.4deg;--float-duration:4.7s;--float-delay:0s;position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-width:0;color:var(--purple);font-size:17px;font-weight:850;line-height:1.22;letter-spacing:.01em;text-align:center;animation:doubt-float var(--float-duration) var(--float-delay) linear infinite alternate;will-change:transform,translate,rotate"
+    },
+    {
+      "seletor": ".resource-eyebrow",
+      "gancho": "fx-piscar-medio",
+      "keyframes": [
+        "piscar-medio"
+      ],
+      "faz": "pisca / aparece e some",
+      "onde": "«TAMBÉM INCLUÍDO NA SUA MENTORIA»",
+      "declaracao": "animation:piscar-medio .85s ease-in-out infinite"
+    },
+    {
+      "seletor": ".offer-scarcity .offer-scarcity-final",
+      "gancho": "fx-piscar-medio",
+      "keyframes": [
+        "piscar-medio"
+      ],
+      "faz": "pisca / aparece e some",
+      "onde": "«SEU DESCONTO EXPIRARÁ ASSIM QUE ESTA PÁGINA FOR ENCERRADA»",
+      "declaracao": "animation:piscar-medio .85s ease-in-out infinite"
+    },
+    {
+      "seletor": ".closing-faq details",
+      "gancho": "fx-closing-faq-details",
+      "keyframes": [],
+      "faz": "transição suave ao interagir",
+      "onde": "«Já comprei o SLL. O que a mentoria acrescenta? O SLL te entrega o méto»",
+      "declaracao": "background:#fff;border:1.5px solid color-mix(in oklch,var(--purple) 18%,var(--background));border-radius:14px;margin-bottom:12px;box-shadow:0 2px 6px -3px rgba(24,17,41,.18);transition:border-color .2s ease-out,box-shadow .2s ease-out,background .2s ease-out;overflow:hidden"
+    },
+    {
+      "seletor": ".closing-faq summary",
+      "gancho": "fx-closing-faq-summary",
+      "keyframes": [],
+      "faz": "transição suave ao interagir",
+      "onde": "«Já comprei o SLL. O que a mentoria acrescenta?»",
+      "declaracao": "position:relative;display:flex;align-items:center;gap:12px;cursor:pointer;min-height:56px;padding:16px 52px 16px 18px;font-size:16px;font-weight:700;line-height:1.35;color:var(--dark);list-style:none;-webkit-tap-highlight-color:transparent;transition:background .15s ease-out"
+    },
+    {
+      "seletor": ".closing-faq summary::after",
+      "gancho": "fx-closing-faq-summary-after",
+      "keyframes": [],
+      "faz": "transição suave ao interagir",
+      "onde": "«Já comprei o SLL. O que a mentoria acrescenta?»",
+      "declaracao": "content:\"\";position:absolute;right:16px;top:50%;width:26px;height:26px;margin-top:-13px;border-radius:50%;background:color-mix(in oklch,var(--purple) 12%,var(--background)) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b21b6' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E\") center/15px 15px no-repeat;transition:transform .25s cubic-bezier(0,0,.2,1),background-color .2s ease-out"
+    },
+    {
+      "seletor": ".closing-faq details[open] > p",
+      "gancho": "fx-faq-revelar",
+      "keyframes": [
+        "faq-revelar"
+      ],
+      "faz": "desloca o elemento (flutua/anda); pisca / aparece e some",
+      "onde": "«O SLL te entrega o método. A mentoria aproxima você do momento de usar»",
+      "declaracao": "animation:faq-revelar .28s cubic-bezier(0,0,.2,1) both"
+    }
+  ],
+  "keyframes": [
+    "progress-stripes",
+    "progress-light",
+    "doubt-float",
+    "piscar-medio",
+    "faq-revelar"
+  ],
+  "scripts": 1,
+  "dependencias": [
+    "#checkout-cta",
+    "#confetti",
+    "#notice",
+    "#notice-text",
+    ".letter-intro-doubts"
+  ],
+  "externos": []
+}

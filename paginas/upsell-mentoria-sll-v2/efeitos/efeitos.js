@@ -1,3 +1,11 @@
+/* Preâmbulo: cria os elementos de que o script depende, caso a página importada não os tenha. */
+(function(){
+  if (!document.getElementById('checkout-cta')) { var e = document.createElement('div'); e.id = 'checkout-cta'; e.style.cssText = 'display:none'; document.body.appendChild(e); }
+  if (!document.getElementById('confetti')) { var e = document.createElement('canvas'); e.id = 'confetti'; e.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9999'; document.body.appendChild(e); }
+  if (!document.getElementById('notice')) { var e = document.createElement('div'); e.id = 'notice'; e.style.cssText = 'display:none'; document.body.appendChild(e); }
+  if (!document.getElementById('notice-text')) { var e = document.createElement('p'); e.id = 'notice-text'; e.style.cssText = 'display:none'; document.body.appendChild(e); }
+})();
+
 /* script inline 1 do original */
 function goToOffer() {
       const target = document.getElementById('checkout-cta');
@@ -180,3 +188,4 @@ function goToOffer() {
       const onMotion = () => { if (motion.matches) stop(); };
       motion.addEventListener('change', onMotion);
     })();
+

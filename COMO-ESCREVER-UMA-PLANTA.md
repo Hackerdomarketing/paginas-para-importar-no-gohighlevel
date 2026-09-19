@@ -70,6 +70,11 @@ original com o Playwright e aponte o arquivo na planta, `imagem: recorte-tal.png
 - texto com degradê (background-clip);
 - montagem sobreposta (etiqueta + título + play em cima de uma capa) — recorte o conjunto todo como uma imagem.
 
+**Mas o efeito não se perde: vai para `efeitos/`.** Tudo que anima ou roda script no original (as 5 animações e o
+confetti da Mentoria, por exemplo) é identificado pelo `extrair_efeitos.py` (o gerador roda sozinho) e entregue à
+parte — `efeitos.css`, `efeitos.js` e `EFEITOS.md` com o passo a passo para colar no editor do GoHighLevel e dar o
+gancho a cada elemento. A entrega de uma página é sempre **página + efeitos/**; sem isso a entrega está incompleta.
+
 O que **tem** elemento nativo, deixe como elemento (fica editável): título, subtítulo, parágrafo, imagem simples,
 lista, botão, divisor, vídeo (YouTube/Vimeo por URL). Lista: o ícone de cada uma vai para a ficha de importação e se
 escolhe no painel do editor depois — não tente desenhar o ícone dentro do item.
@@ -129,3 +134,8 @@ enquanto houver veredito em branco.
 4. **Sombra: cuidado com spread negativo e sombras múltiplas.** O original às vezes usa `box-shadow` com spread
    negativo (encolhe a sombra) ou duas sombras separadas por vírgula. `_sombra_do_css` já pega só a 1ª e zera
    spread negativo, senão a sombra some sobre o branco.
+
+5. **A entrega é página + `efeitos/`, sempre.** Olhe o original inteiro atrás de tudo que se mexe (animação, brilho,
+   piscar, flutuar, confetti, sanfona) e entregue, além da página, os códigos prontos e o passo a passo para colar no
+   editor do GoHighLevel. Não importa se o importador aceita: o efeito existe na versão do GoHighLevel porque a
+   pessoa cola — e o guia diz exatamente onde.
