@@ -742,3 +742,16 @@ hoje muda.
 Para separar qual das três é o crachá: **Sonda I** = B + só as metas `cf:*`; **Sonda J** = B + só a classe
 `clickfunnels-com`. Se a I entrar e a J não, o crachá são as metas (a hipótese mais provável: `cf:page_id` e
 `cf:funnel_id` são exatamente o que o "Importar do ClickFunnels" precisaria ler). Se nenhuma entrar, são os scripts.
+
+### Resultado das Sondas I e J (2026-09-20, mesma noite): o crachá são as metas `cf:*`
+
+- **Sonda I** (B + só as metas `cf:*`): **importou** e foi publicada em `https://hackersdomarketing.com/sonda-i-page`
+  (título, subtítulos e elementos presentes).
+- **Sonda J** (B + só a classe `clickfunnels-com`): **recusada** na tela, mesma mensagem de B, C e D.
+
+Fechado: **o importador do GoHighLevel aceita uma página quando encontra as metas `cf:*` na cabeça** (`cf:funnel_id`,
+`cf:page_id`, `cf:funnel_step_id`… — os valores podem ser de mentira, como sempre foram nas sondas). A classe no
+`<html>` e os scripts do ClickFunnels são dispensáveis para a aceitação. Regra fixa para o conversor e para o
+prompt adaptado: **nunca gerar página sem o bloco de metas `cf:*`** (`gerador_de_identificadores.py` já emite).
+Quais metas exatamente são obrigatórias (só `cf:page_id`? só `cf:funnel_id`?) fica em aberto e não vale sonda: o
+bloco inteiro custa dez linhas.

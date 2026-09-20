@@ -105,8 +105,8 @@ página simples e perigoso para página densa.
 
 ## 6. Recomendação, em ordem
 
-1. ~~Importar as Sondas C, B e D.~~ Feito: recusadas. Agora importar as Sondas I e J para saber qual marca da
-   cabeça é o crachá.
+1. ~~Importar as Sondas C, B e D.~~ Feito: recusadas. ~~Sondas I e J.~~ Feito: I entrou, J recusada. **O crachá
+   são as metas `cf:*`.** O conversor já as emite; o prompt adaptado as carrega pelo esqueleto.
 2. Importar a Mentoria gerada pela planta (momentos 3 e 4). Sem isso o "70%" é chute.
 3. Escrever a Sonda I (flex do 2.0 + `data-page-element` + `ProgressBar/V1` + `<i>` no texto do botão) e importar.
 4. Usar o prompt adaptado v1 numa página nova, pequena, para a IA escrever a planta seguindo o roteiro. Medir

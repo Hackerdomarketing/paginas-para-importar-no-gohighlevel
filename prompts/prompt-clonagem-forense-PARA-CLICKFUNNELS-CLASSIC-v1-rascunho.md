@@ -196,7 +196,8 @@ Descobertas das Sondas A, E, F, G e H. Cada regra abaixo foi testada; não são 
 
 | O importador… | Consequência | Grafia que sobrevive |
 |---|---|---|
-| descarta o `<head>` inteiro | somem título, descrição, `og:image`, favicon, CSS, scripts, pixels | SEO e pixels vão para a ficha, com o caminho do painel (folha com lupa → "Conteúdo" e "Imagens"; "tracking-code" para scripts) |
+| **lê a cabeça na entrada e exige as metas `cf:*`** (Sondas B, C, D, I, J) | sem elas a página é recusada na tela: "Insira um URL válido do ClickFunnels" | bloco de metas `cf:funnel_id`, `cf:page_id`, `cf:funnel_step_id`… de `modelos/esqueleto-classic.html`, valores de mentira servem |
+| descarta o `<head>` inteiro na saída | somem título, descrição, `og:image`, favicon, CSS, scripts, pixels | SEO e pixels vão para a ficha, com o caminho do painel (folha com lupa → "Conteúdo" e "Imagens"; "tracking-code" para scripts) |
 | troca cor com nome CSS (`#ffffff`, `white`, `#000000`, `red`) por uma variável que nunca define | vira cinza | empurrar um canal: `#ffffff` → `#fffffe`, `#000000` → `#000001`. Degradês e cores com transparência ficam |
 | só lê a fonte do título (`data-font-fam`) | texto corrido cai em Lato | `font-family` + `data-google-font` em **cada** wrapper; fonte da página **sem aspas** (`Open Sans, Helvetica, sans-serif`) |
 | escreve `font-weight: heavy` em todo texto | tudo sai em 900 ao salvar | peso **só** num `<span style="font-weight: N">` dentro do texto; `<b>`/`<strong>` viram 900 |
