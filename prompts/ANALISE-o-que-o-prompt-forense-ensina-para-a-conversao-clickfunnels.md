@@ -86,9 +86,11 @@ página simples e perigoso para página densa.
 
 ## 5. Alavancagens que ninguém puxou ainda (e que podem valer mais que qualquer prompt)
 
-1. **A Sonda C nunca foi importada.** Sonda C é a página comum, sem nenhuma roupa de ClickFunnels. O guia diz: "se a
-   C importar com elementos, o conversor nem é necessário". As Sondas B e D (que medem quanta roupa é preciso)
-   também estão sem resultado. São 15 minutos no painel e a resposta redefine o tamanho do problema.
+1. ~~A Sonda C nunca foi importada.~~ **Testado no mesmo dia (2026-09-20): B, C e D recusadas na tela** ("Insira um
+   URL válido do ClickFunnels"). HTML comum não entra; corpo Classic com `lander.css` também não. O importador lê a
+   cabeça na entrada e exige um crachá (metas `cf:*`, classe `clickfunnels-com` ou scripts; Sondas I e J separam
+   qual). Conclusão: a conversão é obrigatória, e a gramática do Apêndice B do prompt adaptado precisa manter as
+   marcas da cabeça, que ele já mantém por copiar `modelos/esqueleto-classic.html`.
 2. **A Mentoria gerada pela planta nunca entrou no GoHighLevel.** Os 70% de acerto são medidos contra o original
    (momento 2 do fluxo visual). Os momentos 3 e 4 (importar, conferir a pré-visualização, publicar) não aconteceram.
    Pode ser que o importador estrague coisas que hoje parecem certas, ou que aceite coisas que hoje viram imagem.
@@ -103,8 +105,8 @@ página simples e perigoso para página densa.
 
 ## 6. Recomendação, em ordem
 
-1. Importar as Sondas C, B e D (15 minutos, ver `GUIA-DE-IMPORTACAO-NO-GOHIGHLEVEL.md` passos 9 a 11). Registrar o
-   resultado no README.
+1. ~~Importar as Sondas C, B e D.~~ Feito: recusadas. Agora importar as Sondas I e J para saber qual marca da
+   cabeça é o crachá.
 2. Importar a Mentoria gerada pela planta (momentos 3 e 4). Sem isso o "70%" é chute.
 3. Escrever a Sonda I (flex do 2.0 + `data-page-element` + `ProgressBar/V1` + `<i>` no texto do botão) e importar.
 4. Usar o prompt adaptado v1 numa página nova, pequena, para a IA escrever a planta seguindo o roteiro. Medir

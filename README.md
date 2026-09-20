@@ -717,3 +717,28 @@ Falta só o momento externo: publicar no GitHub Pages → importar no GoHighLeve
 
 Bugs corrigidos de passagem: `--largura mid` emitia classe inexistente (`midContainer` → `midWideContainer`);
 a moldura da linha ignorava `indice`.
+
+## 2026-09-20 — Sondas B, C e D recusadas na tela: o importador confere um crachá na CABEÇA antes de baixar
+
+O Rafa importou as três no painel. As três caíram no mesmo lugar: mensagem vermelha embaixo do campo, **"Insira um
+URL válido do ClickFunnels e tente novamente"**, antes de qualquer etapa ser criada. Como A, E, F, G e H vieram do
+mesmo endereço do GitHub Pages e entraram, o endereço não é o problema: **o importador baixa a página e procura uma
+marca nela.**
+
+| Sonda | Corpo Classic | `lander.css` | metas `cf:*` | classe `clickfunnels-com` | scripts CF | Resultado |
+|---|---|---|---|---|---|---|
+| A | sim | nativo | sim | sim | sim | importou |
+| B | sim | nativo | não | não | não | **recusada** |
+| D | sim | local | não | não | não | **recusada** |
+| C | não | não | não | não | não | **recusada** |
+
+O que isso fecha: (1) **HTML comum não entra** — a conversão é obrigatória, não existe atalho pela Sonda C;
+(2) **corpo Classic + `lander.css` não bastam** — o crachá está na cabeça, em uma destas três: metas `cf:*`,
+classe `clickfunnels-com` no `<html>`, ou os scripts do ClickFunnels; (3) a frase "a cabeça é indiferente" da
+Escavação 1 fica corrigida: o importador **descarta** a cabeça na saída (Sonda H), mas **lê** a cabeça na entrada
+para decidir se aceita. O conversor já escreve as três marcas desde a Sonda A, então nada do que foi gerado até
+hoje muda.
+
+Para separar qual das três é o crachá: **Sonda I** = B + só as metas `cf:*`; **Sonda J** = B + só a classe
+`clickfunnels-com`. Se a I entrar e a J não, o crachá são as metas (a hipótese mais provável: `cf:page_id` e
+`cf:funnel_id` são exatamente o que o "Importar do ClickFunnels" precisaria ler). Se nenhuma entrar, são os scripts.
