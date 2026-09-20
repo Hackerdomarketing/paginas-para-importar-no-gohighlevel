@@ -152,3 +152,28 @@ enquanto houver veredito em branco.
 
 8. **Original = o arquivo que a pessoa mandou.** Não troque por uma cópia de outro lugar sem conferir que é igual.
    Recortes-imagem: com JavaScript desligado.
+
+9. **Proporção se mede, não se olha (2026-09-19).** O Rafa viu que "a original parece maior" e eu tinha dado a
+   página como parecida. Medido: o original tinha miolo de 760/700/980px e a gerada abria tudo em 1264px, porque
+   (a) a página publicada não conseguia baixar o `lander.css` (403) e ficava sem classe nenhuma, e (b) mesmo com o
+   CSS, `wideContainer` é 1120 — a planta nunca tinha medido a largura do miolo. Regras que saíram disso:
+   - o medidor grava `largura_util` por seção e o gerador escreve `width: Npx; max-width: 100%; margin: 0 auto` na
+     linha (é assim que as páginas reais do ClickFunnels estreitam: `width: 75%` na linha);
+   - a página gerada leva `assets/lander.css` (cópia local);
+   - o comparador recorta os dois lados na largura da tela inteira (mesma escala) — antes ele recortava o original
+     por 760px e a gerada por 1280px e esticava os dois, o que produzia justamente a ilusão de "maior";
+   - junto com os pares, imprime-se a tabela: largura útil original × largura da linha gerada × altura das seções
+     nos dois lados. Veredito de proporção sem número não vale.
+
+10. **Recorte de tela inteira vai de ponta a ponta.** Seção cujo conteúdo é só uma foto de 1280px (topo, tarja,
+    rodapé, bundle): `fullContainer`, sem respiro lateral de coluna/linha/container e `espaco [0,0]`. Aplicar a
+    largura útil medida nela (760, do texto dentro da foto) encolhe a foto; os 20px de respiro viram uma faixa de
+    fundo com uma "linha" na borda da foto. O gerador detecta isso sozinho pelo tamanho do arquivo.
+
+11. **Linha fina no original = divisor de 1px; borda só em cima/embaixo = dois divisores.** O `lander.css`
+    desenha o divisor com 3px; foi isso que apareceu como "linha de separação que não existe". O `aside` da
+    Carta tem `border-top` + `border-bottom` de 1px: o Classic não tem borda parcial, então vira um divisor antes
+    e um depois da linha, com a cor medida (`#e6deef`).
+
+12. **Ícone na frente do título.** Título que começa com um `<svg>` (o ✓ das ofertas) perde o desenho no medidor;
+    ele registra `icone_antes` e o gerador desenha o check em SVG inline — a única grafia que o importador mantém.

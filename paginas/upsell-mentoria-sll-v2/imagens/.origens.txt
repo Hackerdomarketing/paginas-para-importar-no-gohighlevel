@@ -1,0 +1,16 @@
+01-topo.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/01-topo.png
+02-abertura.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/02-abertura.png
+03-cashback.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/03-cashback.png
+04-bundle.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/04-bundle.png
+06-caixa-de-preco-inteira.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/06-caixa-de-preco-inteira.png
+07-risco-zero-inteiro.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/07-risco-zero-inteiro.png
+08b-nuvem-duvidas.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08b-nuvem-duvidas.png
+08c-tres-cards.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08c-tres-cards.png
+08d-conceitos.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08d-conceitos.png
+extra-card1-painel-verde.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card1-painel-verde.png
+extra-card1-exemplo-roxo.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card1-exemplo-roxo.png
+extra-card6-lista-bege.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card6-lista-bege.png
+extra-cupom-voce-ganha.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+10-fechamento-offer-zone.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/10-fechamento-offer-zone.png
+11-tarja.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/11-tarja.png
+12-rodape.png	/Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/12-rodape.png

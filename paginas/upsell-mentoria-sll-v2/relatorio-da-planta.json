@@ -1,0 +1,76 @@
+{
+  "medida": "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/planta-medida.json",
+  "saida": "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/index.html",
+  "titulo": "Mentoria SLL com o Zé Dos Milhões",
+  "secoes": 19,
+  "contagem_por_tipo": {
+    "img": 38,
+    "sub-headline": 28,
+    "Paragraph": 63,
+    "headline": 11,
+    "divider": 9,
+    "list": 1
+  },
+  "fontes_do_google": [
+    "Montserrat",
+    "Raleway"
+  ],
+  "listas": [
+    {
+      "ordem": 1,
+      "identificador": "tmp_list-30245",
+      "icone": "check",
+      "icone_lido_do_original": false,
+      "primeiro_item": "Recebe os produtos direto do fornecedor",
+      "quantidade_de_itens": 4,
+      "como": "lista",
+      "observacao": "sem ícone reconhecível no original; o check é sugestão"
+    }
+  ],
+  "imagens_copiadas": [
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/01-topo.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/02-abertura.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/03-cashback.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/04-bundle.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/06-caixa-de-preco-inteira.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/07-risco-zero-inteiro.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/08b-nuvem-duvidas.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/08c-tres-cards.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/08d-conceitos.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-card1-painel-verde.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-card1-exemplo-roxo.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-cupom-voce-ganha.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-cupom-voce-ganha.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-cupom-voce-ganha.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-cupom-voce-ganha.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-cupom-voce-ganha.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-card6-lista-bege.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-cupom-voce-ganha.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/extra-cupom-voce-ganha.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/10-fechamento-offer-zone.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/11-tarja.png",
+    "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/imagens/12-rodape.png"
+  ],
+  "imagens_sem_endereco_absoluto": [],
+  "avisos": [],
+  "ficha_de_importacao": "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/ficha-de-importacao.md",
+  "efeitos": {
+    "keyframes": [
+      "progress-stripes",
+      "progress-light",
+      "doubt-float",
+      "piscar-medio",
+      "faq-revelar"
+    ],
+    "regras": 12,
+    "scripts": 1,
+    "dependencias": [
+      "#checkout-cta",
+      "#confetti",
+      "#notice",
+      "#notice-text",
+      ".letter-intro-doubts"
+    ],
+    "pasta": "/private/tmp/claude-501/-Users-alfa-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/efeitos"
+  }
+}

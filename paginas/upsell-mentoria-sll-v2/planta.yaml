@@ -170,6 +170,11 @@ secoes:
       - colunas: [12]
         conteudo:
           - - paragrafo: { seletor: "section.letter > p", indice: 0 }
+      # O aside.whatsapp-proof tem border-top e border-bottom de 1px (#e6deef, 700px). O Classic não tem borda só
+      # em cima/embaixo: viram dois divisores finos, um antes e um depois da linha.
+      - colunas: [12]
+        conteudo:
+          - - divisor: { cor: "#e6deef", largura_percentual: 100, espessura_px: 1, espaco_acima: 28, espaco_abaixo: 0 }
       - colunas: [7, 5]
         alinhar: left
         conteudo:
@@ -178,6 +183,9 @@ secoes:
             - paragrafo: { seletor: ".whatsapp-proof-copy > p", indice: 1 }
             - paragrafo: { seletor: ".whatsapp-proof-copy > p", indice: 2 }
           - - imagem: .whatsapp-proof-image
+      - colunas: [12]
+        conteudo:
+          - - divisor: { cor: "#e6deef", largura_percentual: 100, espessura_px: 1, espaco_acima: 32, espaco_abaixo: 42 }
       - colunas: [12]
         conteudo:
           - - titulo: { seletor: "section.letter > h2", indice: 2 }
