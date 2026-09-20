@@ -755,3 +755,51 @@ Fechado: **o importador do GoHighLevel aceita uma página quando encontra as met
 prompt adaptado: **nunca gerar página sem o bloco de metas `cf:*`** (`gerador_de_identificadores.py` já emite).
 Quais metas exatamente são obrigatórias (só `cf:page_id`? só `cf:funnel_id`?) fica em aberto e não vale sonda: o
 bloco inteiro custa dez linhas.
+
+## 2026-09-20 — a Mentoria da planta importada e conferida na PÁGINA PUBLICADA (momento 4, enfim)
+
+Importada no GoHighLevel e publicada em `https://hackersdomarketing.com/teste-upsell-pri-page`. Conferida contra o
+original real (arquivo do Rafa) em 20 pares lado a lado, mesma escala, e medida no navegador (`getComputedStyle`).
+**A estrutura passou inteira**: 20 seções, todas as colunas lado a lado, os 7 cartões de oferta `3+9` com moldura,
+os 7 cartões de detalhe `6+6` alternando o lado, a carta `5+7`/`7+5`, a caixa de preço, o risco zero tracejado, o
+FAQ como pares pergunta+resposta. Nenhum bloco caiu, nenhum virou lista solta. O que o fluxo antigo (adivinhador)
+nunca fez, a planta fez.
+
+**Mas a página publicada NÃO ficou fiel, e por UM bug só, com dois sintomas.** O importador reescreve a largura da
+linha assim:
+
+```
+.row-3OPSHO2WH8{ … width:760px% }      ← o "px" e o "%" grudados: valor inválido, o navegador ignora
+```
+
+Ou seja: ele lê o nosso `width: 760px; max-width: 100%` e concatena os dois numa regra `width:760px%` que não existe
+em CSS. Resultado: **toda linha volta a abrir na largura cheia**. Foi exatamente o "a original parece maior" da regra
+de ouro 9, de novo — só que agora a culpa é do importador, não da planta. Dois sintomas do mesmo bug:
+
+1. **Blocos que eram foto de tela inteira ficaram maiores que o original** (topo, cashback, bundle, fechamento,
+   rodapé, tarja): a imagem sobe para 1120/1170px porque a linha perdeu a largura. No original o cashback tem miolo
+   de 409px e o rodapé é uma faixa com o logo pequeno; na publicada os dois ocupam a largura toda.
+2. **A "pilha de ofertas" e a "caixa de preço" ficaram MENORES que o original** — o contrário — porque nesses dois a
+   planta tinha posto a largura numa COLUNA (`linha_w: 409` e `519` na medição), e a coluna estreita sobreviveu
+   enquanto a linha larga não. Efeito: o conteúdo encavalou.
+
+O que **passou bem** na publicada, confirmado no código:
+- **Cores**: o empurrão do branco (`#fffffe`) funcionou; nada virou cinza. Degradês preservados
+  (`linear-gradient(rgb(24,17,41)…)` intactos no dump).
+- **Molduras**: fundo, borda, raio, sombra e borda tracejada do risco-zero vieram todos (`border-style:dashed` no
+  dump). Cartão é caixa, como devia.
+- **Imagens**: re-hospedadas em `images.leadconnectorhq.com`/`assets.cdn.filesafe.space`, todas presentes.
+- **Espaço entre cartões**: os 60px de `margin-bottom` vieram (`margin-bottom:60px` no dump).
+- **oklch**: 24 na nossa, 23 na publicada — as cores em oklch (medidas do original) sobreviveram quase todas.
+
+O que **quebrou de vez** (limitação real do importador, não da planta):
+- **Largura da linha** (o bug `px%` acima). É o item que estraga a proporção da página inteira.
+- **Mobile**: a página publicada tem 64.883px de altura no celular contra 24.691px do original — quase o triplo.
+  Cada foto de tela cheia, empilhada a 390px, estica. Confirma a regra de ouro 15: seção-foto não resolve mobile.
+
+### Conserto (a fazer na skill, no `gerador_da_planta`/`gerador_html_classic`)
+Não escrever `width: Npx; max-width: 100%` na mesma regra. Testar as saídas que o importador aceita sem colar o
+"px%": (a) só `max-width: Npx` sem `width`; (b) `width: N%` relativo ao container em vez de px; (c) largura numa
+classe do `lander.css` em vez de inline. É uma sonda curta (uma página com as três grafias) antes de mexer no
+gerador. Enquanto isso, **a estrutura está validada**: o método da planta produz a árvore certa; falta só a largura
+sobreviver ao importador.
