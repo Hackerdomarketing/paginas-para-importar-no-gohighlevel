@@ -193,3 +193,32 @@ enquanto houver veredito em branco.
     (topo, abertura, cashback, bundle, caixa de preço, risco zero, fechamento, tarja, rodapé) encolhe para 390px e
     o texto dentro fica ilegível; o original tem CSS próprio de celular. Ver `comparacao/00-mobile-390px-*.png`.
     Isso só se resolve trocando foto por elementos nativos ou entregando um recorte de celular à parte.
+
+## Regra mestra (2026-09-20): foto só onde o original é foto
+
+O Rafa: "Eu não quero porra nenhuma com foto. Eu só quero com foto o que no site original for foto." Ou seja:
+todo texto, título, botão, lista, faixa, selo com texto, caixa de preço, rodapé vira ELEMENTO NATIVO. Só é imagem o
+que no original é `<img>` (logo, mockup, cupom, placas, selos de pagamento, foto da garantia) — mais dois casos
+inevitáveis sem elemento nativo: a barra de progresso listrada (desenho em CSS) e a capa do vídeo (foto com
+sobreposições). A planta da Mentoria refeita assim tem 215 elementos e nenhuma "seção-foto"; o celular passa a
+se resolver sozinho (as colunas empilham e o texto reflui). Regras que saíram dessa refeita:
+
+16. **Inventário antes da planta.** Para cada seção, listar no navegador os filhos visíveis (tag, classe, tamanho,
+    se é `<img>`, se tem fundo/animação, primeiras palavras). Só depois escrever as linhas. Sem o inventário a
+    planta é chute.
+17. **Cartão de UMA coluna com muitos elementos = uma linha com moldura** (caixa de preço, caixa da garantia,
+    cartão foto+texto). Só cartão com colunas lado a dentro (os entregáveis, a história) precisa virar seção
+    com moldura na seção. Faixa-cabeçalho do cartão (o "VEJA TUDO…" roxo) vira a própria linha com moldura, acima.
+18. **Linha com degradê usa `bgNoRepeat`, nunca `bgCover`** — `.bgCover` tem `background-attachment: fixed
+    !important`; o degradê fica preso à janela e o cartão sai branco a partir de 900px.
+19. **O que o medidor aprendeu a ler nesta rodada** (tudo virava diferença visível): pesos 800/900 das fontes
+    (o link do Google Fonts só pedia 400/600/700); `text-transform: uppercase` no elemento e no trecho; trecho em
+    bloco dentro do título (quebra de linha); tamanho de fonte de um trecho; o svg original na frente do título
+    (o triângulo do ESPERE! não é um check); largura máxima do texto (`max-width` do original); margem real de
+    cada elemento = max(margin-top, margin-bottom do irmão de cima) + gap do pai flex/grid; respiro medido da
+    seção; imagem embutida em `data:` vira arquivo em `imagens/`; botão com degradê, negrito e subtexto pequeno.
+20. **Conferência local serve imagens do disco.** A página gerada aponta para a URL pública (é o que o importador
+    precisa); antes de publicar essas imagens não existem online. O comparador intercepta a URL pública e serve
+    de `imagens/` — senão a conferência mostra quadradinho quebrado e engana.
+21. **Regra "faixa sem respiro zera margens" só vale para foto de tela.** Aplicada a seção montada com padding
+    0, colava todos os parágrafos.

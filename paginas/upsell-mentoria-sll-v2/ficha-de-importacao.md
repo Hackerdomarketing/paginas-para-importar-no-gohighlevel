@@ -1,6 +1,6 @@
 # Ficha de importação: Mentoria SLL com o Zé Dos Milhões
 
-Página convertida em 20/09/2026 01:52.
+Página convertida em 20/09/2026 02:15.
 Endereço para colar no importador do GoHighLevel: https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/upsell-mentoria-sll-v2/
 
 Caminho no painel: Sites → Funnels → o funil → "+ Add new step" → campo "Clickfunnels link" → "Create funnel step". Depois de importar: "Edit page" → escolher os ícones das listas → preencher o SEO → Save → Publish (sem o Save a página sai sem cor nem fonte).
@@ -9,11 +9,13 @@ Caminho no painel: Sites → Funnels → o funil → "+ Add new step" → campo 
 
 O importador do GoHighLevel deixa toda lista com a bolinha comum. Para cada lista abaixo, escolha o ícone no painel do editor (passo a passo mais abaixo). A ordem é a mesma em que as listas aparecem na página, de cima para baixo.
 
-Listas com ícone para escolher: 1 de 1.
+Listas com ícone para escolher: 3 de 3.
 
 | # | Ícone para escolher | Começa com | Itens | Observação |
 |---|---|---|---|---|
-| 1 | `check` | Recebe os produtos direto do fornecedor | 4 | sem ícone reconhecível no original; o check é sugestão |
+| 1 | `check` | 6 Encontros ao vivo com o Zé Dos Milhões | 7 | sem ícone reconhecível no original; o check é sugestão |
+| 2 | `check` | Recebe os produtos direto do fornecedor | 4 | sem ícone reconhecível no original; o check é sugestão |
+| 3 | `check` | 6 encontros com o Zé — acompanhe perguntas, análises e de… | 7 | sem ícone reconhecível no original; o check é sugestão |
 
 ## Como escolher o ícone de uma lista no editor (à mão)
 

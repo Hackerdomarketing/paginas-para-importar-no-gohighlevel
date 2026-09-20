@@ -1,485 +1,1049 @@
-# Planta da Mentoria SLL v2 — PRIMEIRA METADE (topo → ofertas → preço).
-# Método: COMO-ESCREVER-UMA-PLANTA.md. Recortes: recortes-mentoria/. Original no projeto do Open Design.
-# Blocos que animam/sobrepõem/são SVG viram imagem (recorte); o resto vira elemento editável.
-R: &recortes /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria
-
+R: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria
 pagina:
   original: /Users/alfa/Downloads/upsell-mentoria-sll-v2.html
   url_publica: https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/upsell-mentoria-sll-v2/
   titulo: Mentoria SLL com o Zé Dos Milhões
-
 secoes:
-  # 01 — topo escuro: logo + barra de progresso animada. A barra anima → imagem do bloco todo.
-  - nome: Topo
-    recorte: 01-topo.png
+- nome: Topo
+  recorte: 01-topo.png
+  seletor: header.top
+  largura: full
+  fundo:
     seletor: header.top
-    largura: full
-    fundo: { seletor: header.top }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/01-topo.png
-
-  # 02 — abertura: ESPERE! (SVG) + headline + vídeo (capa com play sobreposto). Tudo do bloco vira imagem única.
-  - nome: Abertura ESPERE
-    recorte: 02-abertura.png
-    seletor: section.opening
-    largura: wide
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/02-abertura.png
-
-  # 03 — cashback: cupom verde (imagem) + selo. Bloco todo vira imagem (o cupom é desenho).
-  - nome: Cashback
-    recorte: 03-cashback.png
-    seletor: section.cashback-section
-    largura: wide
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/03-cashback.png
-
-  # 04 — bundle: faixa escura, placas de PARE nas laterais (grade 2+8+2 com SVG/imagens). Bloco todo → imagem.
-  - nome: Chance unica (placas de PARE)
-    recorte: 04-bundle.png
+  espaco:
+  - 9
+  - 9
+  linhas:
+  - colunas:
+    - 4
+    - 8
+    alinhar: center
+    conteudo:
+    - - imagem:
+          seletor: header.top img
+          alinhar: left
+    - - paragrafo: header.top p.journey-warning
+      - paragrafo:
+          literal: ✓ Compra iniciada &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#a17ff0;font-weight:700">② Oferta especial</span> &nbsp;&nbsp;&nbsp;&nbsp; ③ Seus acessos
+          tamanho_px: 12
+          cor: '#c9c2d6'
+          alinhar: center
+          espaco_acima: 6
+      - imagem:
+          arquivo: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/elem-barra-progresso.png
+          alinhar: center
+          espaco_acima: 6
+- nome: Abertura ESPERE
+  recorte: 02-abertura.png
+  seletor: section.opening
+  largura: wide
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - titulo: section.opening h1
+      - paragrafo: section.opening p.stop-line
+      - subtitulo: section.opening h2.opening-headline
+  - colunas:
+    - 12
+    moldura:
+      seletor: section.opening div.video-offer-strip
+    conteudo:
+    - - paragrafo:
+          seletor: section.opening div.video-offer-strip
+          espaco_acima: 0
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem:
+          arquivo: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/elem-capa-video.png
+          espaco_acima: 0
+- nome: Cashback
+  recorte: 03-cashback.png
+  seletor: section.cashback-section
+  largura: wide
+  linhas:
+  - colunas:
+    - 12
+    largura_px: 450
+    moldura:
+      seletor: section.cashback-section p.new-member-offer
+    conteudo:
+    - - paragrafo:
+          seletor: section.cashback-section p.new-member-offer
+          espaco_acima: 0
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: section.cashback-section img.cashback-coupon
+- nome: Chance unica (placas de PARE)
+  recorte: 04-bundle.png
+  seletor: section.bundle-banner
+  largura: full
+  fundo:
     seletor: section.bundle-banner
-    largura: full
-    fundo: { seletor: section.bundle-banner }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/04-bundle.png
-
-  # 05 — pilha de 7 ofertas: cada uma é uma linha [3,9] com moldura no cartão (miniatura | texto).
-  # As 7 estão espalhadas (2 em .stack-overlap, 5 diretas); "section.offer-stack article.offer-row" pega todas
-  # na ordem do documento, e o índice 0..6 escolhe qual. O "E você também recebe acesso a" (extras-title) fica
-  # entre a 2ª e a 3ª oferta no original.
-  - nome: Ofertas incluidas
-    recorte: 05-oferta-stack.png
-    seletor: section.offer-stack
-    largura: wide
-    linhas:
-      - colunas: [3, 9]
-        moldura: { seletor: "section.offer-stack article.offer-row", indice: 0 }
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: "section.offer-stack article.offer-row img", indice: 0 }
-          - - subtitulo: { seletor: "section.offer-stack article.offer-row h3", indice: 0 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row p", indice: 0 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row b.included", indice: 0 }
-      - colunas: [3, 9]
-        moldura: { seletor: "section.offer-stack article.offer-row", indice: 1 }
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: "section.offer-stack article.offer-row img", indice: 1 }
-          - - subtitulo: { seletor: "section.offer-stack article.offer-row h3", indice: 1 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row p", indice: 1 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row b.included", indice: 1 }
-      - colunas: [12]
-        conteudo:
-          - - subtitulo: h2.extras-title
-      - colunas: [3, 9]
-        moldura: { seletor: "section.offer-stack article.offer-row", indice: 2 }
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: "section.offer-stack article.offer-row img", indice: 2 }
-          - - subtitulo: { seletor: "section.offer-stack article.offer-row h3", indice: 2 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row p", indice: 2 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row b.included", indice: 2 }
-      - colunas: [3, 9]
-        moldura: { seletor: "section.offer-stack article.offer-row", indice: 3 }
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: "section.offer-stack article.offer-row img", indice: 3 }
-          - - subtitulo: { seletor: "section.offer-stack article.offer-row h3", indice: 3 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row p", indice: 3 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row b.included", indice: 3 }
-      - colunas: [3, 9]
-        moldura: { seletor: "section.offer-stack article.offer-row", indice: 4 }
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: "section.offer-stack article.offer-row img", indice: 4 }
-          - - subtitulo: { seletor: "section.offer-stack article.offer-row h3", indice: 4 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row p", indice: 4 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row b.included", indice: 4 }
-      - colunas: [3, 9]
-        moldura: { seletor: "section.offer-stack article.offer-row", indice: 5 }
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: "section.offer-stack article.offer-row img", indice: 5 }
-          - - subtitulo: { seletor: "section.offer-stack article.offer-row h3", indice: 5 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row p", indice: 5 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row b.included", indice: 5 }
-      - colunas: [3, 9]
-        moldura: { seletor: "section.offer-stack article.offer-row", indice: 6 }
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: "section.offer-stack article.offer-row img", indice: 6 }
-          - - subtitulo: { seletor: "section.offer-stack article.offer-row h3", indice: 6 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row p", indice: 6 }
-            - paragrafo: { seletor: "section.offer-stack article.offer-row b.included", indice: 6 }
-
-  # 06 — caixa de preço roxa: cartão composto denso (mockup+cupom colado+lista+preço+botões, fundo degradê).
-  # Como elementos o fundo se perdia e o texto verde/branco ficava ilegível; imagem do recorte inteiro sai fiel.
-  - nome: Caixa de preco
-    recorte: 06-caixa-de-preco-inteira.png
-    seletor: section.offer-stack div.price-box
-    largura: wide
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/06-caixa-de-preco-inteira.png
-
-  # 07 — garantia RISCO ZERO: imagem 30 dias + selo + caixa verde tracejada com todo o argumento.
-  # A caixa verde inteira se perdia como elementos; imagem do recorte inteiro traz tudo.
-  - nome: Risco Zero
-    recorte: 07-risco-zero-inteiro.png
-    seletor: section.offer-stack div.guarantee
-    largura: wide
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/07-risco-zero-inteiro.png
-
-  # 08 — carta: escrita pelos filhos VISÍVEIS de section.letter, na ordem da tela (conferido no navegador).
-  - nome: Carta
-    recorte: 08-carta.png
-    seletor: section.letter
-    largura: wide
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - titulo: section.letter > h2.letter-open-title
-      - colunas: [5, 7]
-        alinhar: left
-        conteudo:
-          - - imagem: .letter-intro-photo
-          - - paragrafo: { seletor: ".letter-intro-copy > strong", peso: 700 }
-            - paragrafo: { seletor: ".letter-intro-copy > p", indice: 0 }
-            - paragrafo: { seletor: ".letter-intro-copy > p", indice: 1 }
-            - paragrafo: { seletor: ".letter-intro-copy > p", indice: 2 }
-            - paragrafo: { seletor: ".letter-intro-copy > p", indice: 3 }
-            - paragrafo: { seletor: ".letter-intro-copy > p", indice: 4 }
-      - colunas: [12]
-        conteudo:
-          - - titulo: section.letter > h2.letter-doubts-title
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08b-nuvem-duvidas.png
-      - colunas: [12]
-        conteudo:
-          - - paragrafo: { seletor: "section.letter > p", indice: 0 }
-      # O aside.whatsapp-proof tem border-top e border-bottom de 1px (#e6deef, 700px). O Classic não tem borda só
-      # em cima/embaixo: viram dois divisores finos, um antes e um depois da linha.
-      - colunas: [12]
-        conteudo:
-          - - divisor: { cor: "#e6deef", largura_percentual: 100, espessura_px: 1, espaco_acima: 28, espaco_abaixo: 0 }
-      - colunas: [7, 5]
-        alinhar: left
-        conteudo:
-          - - subtitulo: .whatsapp-proof-copy > h3
-            - paragrafo: { seletor: ".whatsapp-proof-copy > p", indice: 0 }
-            - paragrafo: { seletor: ".whatsapp-proof-copy > p", indice: 1 }
-            - paragrafo: { seletor: ".whatsapp-proof-copy > p", indice: 2 }
-          - - imagem: .whatsapp-proof-image
-      - colunas: [12]
-        conteudo:
-          - - divisor: { cor: "#e6deef", largura_percentual: 100, espessura_px: 1, espaco_acima: 32, espaco_abaixo: 42 }
-      - colunas: [12]
-        conteudo:
-          - - titulo: { seletor: "section.letter > h2", indice: 2 }
-            - paragrafo: { seletor: "section.letter > p", indice: 1 }
-            - paragrafo: { seletor: "section.letter > p", indice: 2 }
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08c-tres-cards.png
-      - colunas: [12]
-        conteudo:
-          - - subtitulo: section.letter > p.mentoria-subheadline
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08d-conceitos.png
-      - colunas: [12]
-        conteudo:
-          - - subtitulo: { seletor: "section.letter > p.mentoria-support-subheadline", indice: 0 }
-            - subtitulo: { seletor: "section.letter > p.mentoria-support-subheadline", indice: 1 }
-
-  # 09 — 7 cartões de detalhe, cada um pelo que ELE tem (eyebrow, divisor, subtítulo em itálico, parágrafos
-  # separados, extras próprios). Card 1: painel verde + exemplo. Card 6: caixa bege. Card 7: lista de 4 passos.
-  - nome: Detalhe 1 - SESSÃO LOJA NA TELA
-    recorte: 09-detalhes-card.png
+  linhas:
+  - colunas:
+    - 2
+    - 8
+    - 2
+    largura_px: 980
+    conteudo:
+    - - imagem:
+          seletor: section.bundle-banner img.stop-sign--left
+          alinhar: right
+    - - subtitulo: section.bundle-banner div.bundle-copy h2
+      - paragrafo: section.bundle-banner p.banner-line
+    - - imagem:
+          seletor: section.bundle-banner img.stop-sign--right
+          alinhar: left
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: section.bundle-banner img.pack
+- nome: Ofertas incluidas
+  recorte: 05-oferta-stack.png
+  seletor: section.offer-stack
+  largura: wide
+  linhas:
+  - colunas:
+    - 3
+    - 9
+    moldura:
+      seletor: section.offer-stack article.offer-row
+      indice: 0
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: section.offer-stack article.offer-row img
+          indice: 0
+    - - subtitulo:
+          seletor: section.offer-stack article.offer-row h3
+          indice: 0
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row p
+          indice: 0
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row b.included
+          indice: 0
+  - colunas:
+    - 3
+    - 9
+    moldura:
+      seletor: section.offer-stack article.offer-row
+      indice: 1
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: section.offer-stack article.offer-row img
+          indice: 1
+    - - subtitulo:
+          seletor: section.offer-stack article.offer-row h3
+          indice: 1
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row p
+          indice: 1
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row b.included
+          indice: 1
+  - colunas:
+    - 12
+    conteudo:
+    - - subtitulo: h2.extras-title
+  - colunas:
+    - 3
+    - 9
+    moldura:
+      seletor: section.offer-stack article.offer-row
+      indice: 2
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: section.offer-stack article.offer-row img
+          indice: 2
+    - - subtitulo:
+          seletor: section.offer-stack article.offer-row h3
+          indice: 2
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row p
+          indice: 2
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row b.included
+          indice: 2
+  - colunas:
+    - 3
+    - 9
+    moldura:
+      seletor: section.offer-stack article.offer-row
+      indice: 3
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: section.offer-stack article.offer-row img
+          indice: 3
+    - - subtitulo:
+          seletor: section.offer-stack article.offer-row h3
+          indice: 3
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row p
+          indice: 3
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row b.included
+          indice: 3
+  - colunas:
+    - 3
+    - 9
+    moldura:
+      seletor: section.offer-stack article.offer-row
+      indice: 4
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: section.offer-stack article.offer-row img
+          indice: 4
+    - - subtitulo:
+          seletor: section.offer-stack article.offer-row h3
+          indice: 4
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row p
+          indice: 4
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row b.included
+          indice: 4
+  - colunas:
+    - 3
+    - 9
+    moldura:
+      seletor: section.offer-stack article.offer-row
+      indice: 5
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: section.offer-stack article.offer-row img
+          indice: 5
+    - - subtitulo:
+          seletor: section.offer-stack article.offer-row h3
+          indice: 5
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row p
+          indice: 5
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row b.included
+          indice: 5
+  - colunas:
+    - 3
+    - 9
+    moldura:
+      seletor: section.offer-stack article.offer-row
+      indice: 6
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: section.offer-stack article.offer-row img
+          indice: 6
+    - - subtitulo:
+          seletor: section.offer-stack article.offer-row h3
+          indice: 6
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row p
+          indice: 6
+      - paragrafo:
+          seletor: section.offer-stack article.offer-row b.included
+          indice: 6
+- nome: Caixa de preco
+  recorte: 06-caixa-de-preco-inteira.png
+  seletor: section.offer-stack div.price-box
+  largura: wide
+  linhas:
+  - colunas:
+    - 12
+    moldura:
+      seletor: section.offer-stack div.price-box > h3
+    alinhar: center
+    conteudo:
+    - - subtitulo:
+          seletor: section.offer-stack div.price-box > h3
+          espaco_acima: 0
+  - colunas:
+    - 12
+    moldura:
+      seletor: section.offer-stack div.price-box
+    alinhar: center
+    conteudo:
+    - - imagem: section.offer-stack div.price-box img.price-pack
+      - imagem: section.offer-stack div.price-pack-cashback-tag img
+      - lista:
+          seletor: section.offer-stack div.price-box ul.offer-summary
+          alinhar: left
+      - paragrafo: section.offer-stack div.price-box p.offer-credit-title
+      - paragrafo: section.offer-stack div.price-box p.offer-pricing-before
+      - paragrafo: section.offer-stack div.price-box p.offer-pricing-current
+      - paragrafo: section.offer-stack div.price-box p.offer-pricing-discount
+      - paragrafo: section.offer-stack div.price-box p.offer-pricing-total
+      - botao: section.offer-stack div.price-box button.buy
+      - botao: section.offer-stack div.price-box button.decline
+      - imagem: section.offer-stack div.price-box div.trust-seals img
+- nome: Risco Zero
+  recorte: 07-risco-zero-inteiro.png
+  seletor: section.offer-stack div.guarantee
+  largura: wide
+  linhas:
+  - colunas:
+    - 12
+    alinhar: center
+    conteudo:
+    - - imagem: section.offer-stack div.guarantee > img
+      - paragrafo: section.offer-stack div.guarantee-copy > span
+      - titulo: section.offer-stack h2.guarantee-zero
+      - subtitulo: section.offer-stack p.guarantee-headline
+  - colunas:
+    - 12
+    moldura:
+      seletor: section.offer-stack div.guarantee-box
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: section.offer-stack div.guarantee-box > p
+          indice: 0
+          espaco_acima: 0
+      - paragrafo:
+          seletor: section.offer-stack div.guarantee-box > p
+          indice: 1
+      - paragrafo:
+          seletor: section.offer-stack div.guarantee-box > p
+          indice: 2
+      - paragrafo:
+          seletor: section.offer-stack div.guarantee-box > p
+          indice: 3
+      - paragrafo:
+          seletor: section.offer-stack div.guarantee-box > p
+          indice: 4
+      - paragrafo:
+          seletor: section.offer-stack div.guarantee-box > p
+          indice: 5
+      - paragrafo:
+          seletor: section.offer-stack div.guarantee-box > p
+          indice: 6
+      - subtitulo: section.offer-stack div.guarantee-box h3.guarantee-statement
+- nome: Carta
+  recorte: 08-carta.png
+  seletor: section.letter
+  largura: wide
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - titulo: section.letter > h2.letter-open-title
+  - colunas:
+    - 5
+    - 7
+    alinhar: left
+    conteudo:
+    - - imagem: .letter-intro-photo
+    - - paragrafo:
+          seletor: .letter-intro-copy > strong
+          peso: 700
+      - paragrafo:
+          seletor: .letter-intro-copy > p
+          indice: 0
+      - paragrafo:
+          seletor: .letter-intro-copy > p
+          indice: 1
+      - paragrafo:
+          seletor: .letter-intro-copy > p
+          indice: 2
+      - paragrafo:
+          seletor: .letter-intro-copy > p
+          indice: 3
+      - paragrafo:
+          seletor: .letter-intro-copy > p
+          indice: 4
+  - colunas:
+    - 12
+    conteudo:
+    - - titulo: section.letter > h2.letter-doubts-title
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08b-nuvem-duvidas.png
+  - colunas:
+    - 12
+    conteudo:
+    - - paragrafo:
+          seletor: section.letter > p
+          indice: 0
+  - colunas:
+    - 12
+    conteudo:
+    - - divisor:
+          cor: '#e6deef'
+          largura_percentual: 100
+          espessura_px: 1
+          espaco_acima: 28
+          espaco_abaixo: 0
+  - colunas:
+    - 7
+    - 5
+    alinhar: left
+    conteudo:
+    - - subtitulo: .whatsapp-proof-copy > h3
+      - paragrafo:
+          seletor: .whatsapp-proof-copy > p
+          indice: 0
+      - paragrafo:
+          seletor: .whatsapp-proof-copy > p
+          indice: 1
+      - paragrafo:
+          seletor: .whatsapp-proof-copy > p
+          indice: 2
+    - - imagem: .whatsapp-proof-image
+  - colunas:
+    - 12
+    conteudo:
+    - - divisor:
+          cor: '#e6deef'
+          largura_percentual: 100
+          espessura_px: 1
+          espaco_acima: 32
+          espaco_abaixo: 42
+  - colunas:
+    - 12
+    conteudo:
+    - - titulo:
+          seletor: section.letter > h2
+          indice: 2
+      - paragrafo:
+          seletor: section.letter > p
+          indice: 1
+      - paragrafo:
+          seletor: section.letter > p
+          indice: 2
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08c-tres-cards.png
+  - colunas:
+    - 12
+    conteudo:
+    - - subtitulo: section.letter > p.mentoria-subheadline
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/08d-conceitos.png
+  - colunas:
+    - 12
+    conteudo:
+    - - subtitulo:
+          seletor: section.letter > p.mentoria-support-subheadline
+          indice: 0
+      - subtitulo:
+          seletor: section.letter > p.mentoria-support-subheadline
+          indice: 1
+- nome: Detalhe 1 - SESSÃO LOJA NA TELA
+  recorte: 09-detalhes-card.png
+  seletor: .details-zone .detail-card
+  largura: wide
+  fundo:
     seletor: .details-zone .detail-card
-    largura: wide
-    fundo: { seletor: ".details-zone .detail-card", indice: 0 }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - titulo: { seletor: ".details-zone .detail-card h2", indice: 0 }
-            - subtitulo: { seletor: ".details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline", indice: 0, italico: true }
-            - divisor: { cor: "#c9b5e7", largura_percentual: 70 }
-      - colunas: [6, 6]
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: ".details-zone .detail-card .detail-visual img", indice: 0 }
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 0 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 1 }
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card1-painel-verde.png
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card1-exemplo-roxo.png
-      - colunas: [8, 4]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-footer .deliverable-benefit", indice: 0 }
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
-
-  - nome: Detalhe 2 - 6 ENCONTROS
-    recorte: 09-detalhes-cardb.png
+    indice: 0
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - titulo:
+          seletor: .details-zone .detail-card h2
+          indice: 0
+      - subtitulo:
+          seletor: .details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline
+          indice: 0
+          italico: true
+      - divisor:
+          cor: '#c9b5e7'
+          largura_percentual: 70
+  - colunas:
+    - 6
+    - 6
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: .details-zone .detail-card .detail-visual img
+          indice: 0
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 0
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 1
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card1-painel-verde.png
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card1-exemplo-roxo.png
+  - colunas:
+    - 8
+    - 4
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-footer .deliverable-benefit
+          indice: 0
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+- nome: Detalhe 2 - 6 ENCONTROS
+  recorte: 09-detalhes-cardb.png
+  seletor: .details-zone .detail-card
+  largura: wide
+  fundo:
     seletor: .details-zone .detail-card
-    largura: wide
-    fundo: { seletor: ".details-zone .detail-card", indice: 1 }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - titulo: { seletor: ".details-zone .detail-card h2", indice: 1 }
-            - subtitulo: { seletor: ".details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline", indice: 1, italico: true }
-            - divisor: { cor: "#c9b5e7", largura_percentual: 70 }
-      - colunas: [6, 6]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 2 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 3 }
-          - - imagem: { seletor: ".details-zone .detail-card .detail-visual img", indice: 1 }
-      - colunas: [8, 4]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-footer .deliverable-benefit", indice: 1 }
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
-
-  - nome: Detalhe 3 - RADAR SHOPEE
-    recorte: 09-detalhes-cardc.png
+    indice: 1
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - titulo:
+          seletor: .details-zone .detail-card h2
+          indice: 1
+      - subtitulo:
+          seletor: .details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline
+          indice: 1
+          italico: true
+      - divisor:
+          cor: '#c9b5e7'
+          largura_percentual: 70
+  - colunas:
+    - 6
+    - 6
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 2
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 3
+    - - imagem:
+          seletor: .details-zone .detail-card .detail-visual img
+          indice: 1
+  - colunas:
+    - 8
+    - 4
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-footer .deliverable-benefit
+          indice: 1
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+- nome: Detalhe 3 - RADAR SHOPEE
+  recorte: 09-detalhes-cardc.png
+  seletor: .details-zone .detail-card
+  largura: wide
+  fundo:
     seletor: .details-zone .detail-card
-    largura: wide
-    fundo: { seletor: ".details-zone .detail-card", indice: 2 }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .resource-eyebrow", indice: 0 }
-            - titulo: { seletor: ".details-zone .detail-card h2", indice: 2 }
-            - subtitulo: { seletor: ".details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline", indice: 2, italico: true }
-            - divisor: { cor: "#c9b5e7", largura_percentual: 70 }
-      - colunas: [6, 6]
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: ".details-zone .detail-card .detail-visual img", indice: 2 }
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 4 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 5 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 6 }
-      - colunas: [8, 4]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-footer .deliverable-benefit", indice: 2 }
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
-
-  - nome: Detalhe 4 - LINHA DIRETA
-    recorte: 09-detalhes-cardd.png
+    indice: 2
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .resource-eyebrow
+          indice: 0
+      - titulo:
+          seletor: .details-zone .detail-card h2
+          indice: 2
+      - subtitulo:
+          seletor: .details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline
+          indice: 2
+          italico: true
+      - divisor:
+          cor: '#c9b5e7'
+          largura_percentual: 70
+  - colunas:
+    - 6
+    - 6
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: .details-zone .detail-card .detail-visual img
+          indice: 2
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 4
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 5
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 6
+  - colunas:
+    - 8
+    - 4
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-footer .deliverable-benefit
+          indice: 2
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+- nome: Detalhe 4 - LINHA DIRETA
+  recorte: 09-detalhes-cardd.png
+  seletor: .details-zone .detail-card
+  largura: wide
+  fundo:
     seletor: .details-zone .detail-card
-    largura: wide
-    fundo: { seletor: ".details-zone .detail-card", indice: 3 }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .resource-eyebrow", indice: 1 }
-            - titulo: { seletor: ".details-zone .detail-card h2", indice: 3 }
-            - subtitulo: { seletor: ".details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline", indice: 3, italico: true }
-            - divisor: { cor: "#c9b5e7", largura_percentual: 70 }
-      - colunas: [6, 6]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 7 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 8 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 9 }
-          - - imagem: { seletor: ".details-zone .detail-card .detail-visual img", indice: 3 }
-      - colunas: [8, 4]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-footer .deliverable-benefit", indice: 3 }
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
-
-  - nome: Detalhe 5 - REDE DE FORNECEDORES
-    recorte: 09-detalhes-carde.png
+    indice: 3
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .resource-eyebrow
+          indice: 1
+      - titulo:
+          seletor: .details-zone .detail-card h2
+          indice: 3
+      - subtitulo:
+          seletor: .details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline
+          indice: 3
+          italico: true
+      - divisor:
+          cor: '#c9b5e7'
+          largura_percentual: 70
+  - colunas:
+    - 6
+    - 6
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 7
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 8
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 9
+    - - imagem:
+          seletor: .details-zone .detail-card .detail-visual img
+          indice: 3
+  - colunas:
+    - 8
+    - 4
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-footer .deliverable-benefit
+          indice: 3
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+- nome: Detalhe 5 - REDE DE FORNECEDORES
+  recorte: 09-detalhes-carde.png
+  seletor: .details-zone .detail-card
+  largura: wide
+  fundo:
     seletor: .details-zone .detail-card
-    largura: wide
-    fundo: { seletor: ".details-zone .detail-card", indice: 4 }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .resource-eyebrow", indice: 2 }
-            - titulo: { seletor: ".details-zone .detail-card h2", indice: 4 }
-            - subtitulo: { seletor: ".details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline", indice: 4, italico: true }
-            - divisor: { cor: "#c9b5e7", largura_percentual: 70 }
-      - colunas: [6, 6]
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: ".details-zone .detail-card .detail-visual img", indice: 4 }
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 10 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 11 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 12 }
-      - colunas: [8, 4]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-footer .deliverable-benefit", indice: 4 }
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
-
-  - nome: Detalhe 6 - RAIO-X
-    recorte: 09-detalhes-cardf.png
+    indice: 4
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .resource-eyebrow
+          indice: 2
+      - titulo:
+          seletor: .details-zone .detail-card h2
+          indice: 4
+      - subtitulo:
+          seletor: .details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline
+          indice: 4
+          italico: true
+      - divisor:
+          cor: '#c9b5e7'
+          largura_percentual: 70
+  - colunas:
+    - 6
+    - 6
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: .details-zone .detail-card .detail-visual img
+          indice: 4
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 10
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 11
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 12
+  - colunas:
+    - 8
+    - 4
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-footer .deliverable-benefit
+          indice: 4
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+- nome: Detalhe 6 - RAIO-X
+  recorte: 09-detalhes-cardf.png
+  seletor: .details-zone .detail-card
+  largura: wide
+  fundo:
     seletor: .details-zone .detail-card
-    largura: wide
-    fundo: { seletor: ".details-zone .detail-card", indice: 5 }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .resource-eyebrow", indice: 3 }
-            - titulo: { seletor: ".details-zone .detail-card h2", indice: 5 }
-            - subtitulo: { seletor: ".details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline", indice: 5, italico: true }
-            - divisor: { cor: "#c9b5e7", largura_percentual: 70 }
-      - colunas: [6, 6]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 13 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 14 }
-            - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p", indice: 15 }
-          - - imagem: { seletor: ".details-zone .detail-card .detail-visual img", indice: 5 }
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card6-lista-bege.png
-      - colunas: [8, 4]
-        alinhar: left
-        conteudo:
-          - []
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
-
-  - nome: Detalhe 7 - SEU ESTOQUE
-    recorte: 09-detalhes-cardg.png
+    indice: 5
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .resource-eyebrow
+          indice: 3
+      - titulo:
+          seletor: .details-zone .detail-card h2
+          indice: 5
+      - subtitulo:
+          seletor: .details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline
+          indice: 5
+          italico: true
+      - divisor:
+          cor: '#c9b5e7'
+          largura_percentual: 70
+  - colunas:
+    - 6
+    - 6
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 13
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 14
+      - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p
+          indice: 15
+    - - imagem:
+          seletor: .details-zone .detail-card .detail-visual img
+          indice: 5
+  - colunas:
+    - 12
+    conteudo:
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-card6-lista-bege.png
+  - colunas:
+    - 8
+    - 4
+    alinhar: left
+    conteudo:
+    - []
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+- nome: Detalhe 7 - SEU ESTOQUE
+  recorte: 09-detalhes-cardg.png
+  seletor: .details-zone .detail-card
+  largura: wide
+  fundo:
     seletor: .details-zone .detail-card
-    largura: wide
-    fundo: { seletor: ".details-zone .detail-card", indice: 6 }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .resource-eyebrow", indice: 4 }
-            - titulo: { seletor: ".details-zone .detail-card h2", indice: 6 }
-            - subtitulo: { seletor: ".details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline", indice: 6, italico: true }
-            - divisor: { cor: "#c9b5e7", largura_percentual: 70 }
-      - colunas: [6, 6]
-        alinhar: left
-        conteudo:
-          - - imagem: { seletor: ".details-zone .detail-card .detail-visual img", indice: 6 }
-          - - lista: { seletor: ".details-zone .detail-card .detail-copy ul", indice: 0 }
-      - colunas: [8, 4]
-        alinhar: left
-        conteudo:
-          - - paragrafo: { seletor: ".details-zone .detail-card .detail-copy > p.deliverable-benefit", indice: 0 }
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
-
-  # 10 — fechamento: o miolo (barra de progresso, AQUI E AGORA, preco final, garantia, historia) é desenho/
-  # degradê/animação → imagem; o FAQ vira 9 pares subtítulo(pergunta)+parágrafo(resposta), editáveis.
-  - nome: Fechamento oferta
-    recorte: 10-fechamento.png
+    indice: 6
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .resource-eyebrow
+          indice: 4
+      - titulo:
+          seletor: .details-zone .detail-card h2
+          indice: 6
+      - subtitulo:
+          seletor: .details-zone .detail-card .detail-header h3, .details-zone .detail-card .detail-header .detail-subheadline
+          indice: 6
+          italico: true
+      - divisor:
+          cor: '#c9b5e7'
+          largura_percentual: 70
+  - colunas:
+    - 6
+    - 6
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: .details-zone .detail-card .detail-visual img
+          indice: 6
+    - - lista:
+          seletor: .details-zone .detail-card .detail-copy ul
+          indice: 0
+  - colunas:
+    - 8
+    - 4
+    alinhar: left
+    conteudo:
+    - - paragrafo:
+          seletor: .details-zone .detail-card .detail-copy > p.deliverable-benefit
+          indice: 0
+    - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/extra-cupom-voce-ganha.png
+- nome: Fechamento oferta
+  recorte: 10-fechamento.png
+  seletor: section.closing .closing-offer-zone
+  largura: full
+  fundo:
     seletor: section.closing .closing-offer-zone
-    largura: full
-    fundo: { seletor: section.closing .closing-offer-zone }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/10-fechamento-offer-zone.png
-  - nome: Perguntas frequentes
-    recorte: 10-fechamento.png
-    seletor: section.closing .closing-faq
-    largura: wide
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - titulo: .closing-faq h2
-            - paragrafo: .closing-faq p.faq-instrucao
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 0 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 0 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 0 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 1 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 1 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 1 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 2 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 2 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 2 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 3 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 3 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 3 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 4 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 4 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 4 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 5 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 5 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 5 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 6 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 6 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 6 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 7 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 7 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 7 }
-      - colunas: [12]
-        moldura: { seletor: ".closing-faq details", indice: 8 }
-        alinhar: left
-        conteudo:
-          - - subtitulo: { seletor: ".closing-faq details summary", indice: 8 }
-            - paragrafo: { seletor: ".closing-faq details", indice: 8 }
-
-  # 11 — tarja vermelha: o recorte JÁ é a faixa inteira (degradê + linha do topo). Sem fundo na seção — a
-  # seção com fundo por baixo de uma imagem menor que ela deixava uma risca aparecendo.
-  - nome: Tarja ultima chance
-    recorte: 11-tarja.png
+  linhas:
+  - colunas:
+    - 12
+    largura_px: 760
+    alinhar: center
+    conteudo:
+    - - paragrafo:
+          literal: ✓ Compra iniciada &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:#a17ff0;font-weight:700">② Oferta especial</span> &nbsp;&nbsp;&nbsp;&nbsp; ③ Seus acessos
+          tamanho_px: 12
+          cor: '#c9c2d6'
+          alinhar: center
+      - imagem:
+          arquivo: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/elem-barra-progresso-fechamento.png
+          alinhar: center
+          espaco_acima: 6
+      - paragrafo: .closing-offer-zone span.offer-scarcity-eyebrow
+      - titulo: .closing-offer-zone div.offer-scarcity > h3
+      - paragrafo: .closing-offer-zone p.offer-scarcity-lead
+      - paragrafo: .closing-offer-zone p.offer-scarcity-final
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-offer-zone div.last-price > h3
+    alinhar: center
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-offer-zone div.last-price > h3
+          espaco_acima: 0
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-offer-zone div.price-box.last-price
+    alinhar: center
+    conteudo:
+    - - imagem: .closing-offer-zone div.last-price img.price-pack
+      - lista:
+          seletor: .closing-offer-zone div.last-price ul.offer-summary
+          alinhar: left
+      - paragrafo: .closing-offer-zone p.closing-final-price
+      - botao: .closing-offer-zone div.last-price button.buy
+      - botao: .closing-offer-zone div.last-price button.decline
+      - imagem: .closing-offer-zone div.last-price div.trust-seals img
+  - colunas:
+    - 12
+    largura_px: 660
+    moldura:
+      seletor: .closing-offer-zone div.guarantee-photo
+    alinhar: left
+    conteudo:
+    - - imagem:
+          seletor: .closing-offer-zone div.guarantee-photo > img
+          espaco_acima: 0
+      - paragrafo:
+          seletor: .closing-offer-zone p.guarantee-photo-title
+          espaco_acima: 0
+      - paragrafo:
+          seletor: .closing-offer-zone div.guarantee-photo-text > p
+          indice: 1
+      - paragrafo:
+          seletor: .closing-offer-zone div.guarantee-photo-text > p
+          indice: 2
+- nome: Fechamento historia
+  recorte: 10-fechamento.png
+  seletor: .closing-offer-zone div.closing-story
+  largura: wide
+  fundo:
+    seletor: .closing-offer-zone div.closing-story
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - paragrafo: .closing-offer-zone p.closing-callout
+      - subtitulo:
+          seletor: .closing-offer-zone div.closing-story > h2
+          indice: 0
+      - paragrafo:
+          seletor: .closing-offer-zone div.closing-story > p
+          indice: 1
+      - paragrafo:
+          seletor: .closing-offer-zone div.closing-story > p
+          indice: 2
+      - paragrafo:
+          seletor: .closing-offer-zone div.closing-story > p
+          indice: 3
+      - paragrafo: .closing-offer-zone p.closing-story-outcome
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-offer-zone div.closing-decision
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-offer-zone div.closing-decision > h2
+          espaco_acima: 0
+      - paragrafo:
+          seletor: .closing-offer-zone div.closing-decision > p
+          indice: 0
+      - paragrafo:
+          seletor: .closing-offer-zone div.closing-decision > p
+          indice: 1
+  - colunas:
+    - 12
+    alinhar: center
+    conteudo:
+    - - botao: .closing-offer-zone div.post-guarantee-cta button.buy
+      - botao: .closing-offer-zone div.post-guarantee-cta button.decline
+      - imagem: .closing-offer-zone div.post-guarantee-cta div.trust-seals img
+- nome: Perguntas frequentes
+  recorte: 10-fechamento.png
+  seletor: section.closing .closing-faq
+  largura: wide
+  linhas:
+  - colunas:
+    - 12
+    conteudo:
+    - - titulo: .closing-faq h2
+      - paragrafo: .closing-faq p.faq-instrucao
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 0
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 0
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 0
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 1
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 1
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 1
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 2
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 2
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 2
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 3
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 3
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 3
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 4
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 4
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 4
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 5
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 5
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 5
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 6
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 6
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 6
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 7
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 7
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 7
+  - colunas:
+    - 12
+    moldura:
+      seletor: .closing-faq details
+      indice: 8
+    alinhar: left
+    conteudo:
+    - - subtitulo:
+          seletor: .closing-faq details summary
+          indice: 8
+      - paragrafo:
+          seletor: .closing-faq details
+          indice: 8
+- nome: Tarja ultima chance
+  recorte: 11-tarja.png
+  seletor: div.tarja-ultima-chance
+  largura: full
+  fundo:
     seletor: div.tarja-ultima-chance
-    largura: full
-    espaco: [0, 0]
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/11-tarja.png
-
-  # 12 — rodapé escuro: logo + texto pequeno + links.
-  - nome: Rodape
-    recorte: 12-rodape.png
+  linhas:
+  - colunas:
+    - 12
+    alinhar: center
+    conteudo:
+    - - paragrafo: div.tarja-ultima-chance span.tarja-eyebrow
+      - subtitulo: div.tarja-ultima-chance h2
+      - paragrafo: div.tarja-ultima-chance p
+- nome: Rodape
+  recorte: 12-rodape.png
+  seletor: main > footer
+  largura: full
+  fundo:
     seletor: main > footer
-    largura: full
-    espaco: [0, 0]
-    fundo: { seletor: main > footer }
-    linhas:
-      - colunas: [12]
-        conteudo:
-          - - imagem: /Users/alfa/Documents/VSCODE/paginas-para-importar-no-gohighlevel/recortes-mentoria/12-rodape.png
+  linhas:
+  - colunas:
+    - 12
+    alinhar: center
+    conteudo:
+    - - imagem: main > footer img
+      - paragrafo: main > footer small
