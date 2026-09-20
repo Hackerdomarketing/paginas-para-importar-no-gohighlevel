@@ -177,3 +177,19 @@ enquanto houver veredito em branco.
 
 12. **Ícone na frente do título.** Título que começa com um `<svg>` (o ✓ das ofertas) perde o desenho no medidor;
     ele registra `icone_antes` e o gerador desenha o check em SVG inline — a única grafia que o importador mantém.
+
+13. **Recorte se tira com JavaScript LIGADO e efeitos congelados — e se abre a foto antes de usar (2026-09-20).**
+    O recorte do fechamento foi tirado com JS desligado (para não entrar o confetti) e o mockup, que entra por
+    script, saiu como um buraco branco. Ninguém abriu a foto; ela foi para a página publicada. Use
+    `recortar_bloco_do_original.py`: JS ligado, animações congeladas, canvas de confetti escondido, página rolada
+    para carregar imagem preguiçosa, e aviso quando alguma imagem do bloco não carregou. Depois, olhe a foto.
+
+14. **Cartão-seção tem margem embaixo; recorte de tela acompanha a tela.** A margem medida entre cartões (60px)
+    vai como `margin-bottom` na seção. Recorte de tela inteira: foto a 100% da linha, sem teto de largura, e a
+    seção com o fundo medido do original (cor ou degradê) — numa tela de 1512px a foto de 1280 deixava faixas
+    brancas dos lados na tarja.
+
+15. **Mobile não está resolvido.** A estrutura empilha (é o CSS do ClickFunnels), mas toda seção que é FOTO
+    (topo, abertura, cashback, bundle, caixa de preço, risco zero, fechamento, tarja, rodapé) encolhe para 390px e
+    o texto dentro fica ilegível; o original tem CSS próprio de celular. Ver `comparacao/00-mobile-390px-*.png`.
+    Isso só se resolve trocando foto por elementos nativos ou entregando um recorte de celular à parte.
