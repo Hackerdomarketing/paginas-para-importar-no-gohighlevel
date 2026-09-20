@@ -1,6 +1,6 @@
 # Ficha de importação: Mentoria SLL com o Zé Dos Milhões
 
-Página convertida em 20/09/2026 02:15.
+Página convertida em 20/09/2026 04:11.
 Endereço para colar no importador do GoHighLevel: https://hackerdomarketing.github.io/paginas-para-importar-no-gohighlevel/paginas/upsell-mentoria-sll-v2/
 
 Caminho no painel: Sites → Funnels → o funil → "+ Add new step" → campo "Clickfunnels link" → "Create funnel step". Depois de importar: "Edit page" → escolher os ícones das listas → preencher o SEO → Save → Publish (sem o Save a página sai sem cor nem fonte).
@@ -36,7 +36,7 @@ Passo 6: repita para as outras listas da tabela. Não salve ainda: siga para a s
 Com a página importada aberta no editor dentro do Tandem Browser, peça ao Claude para rodar:
 
 ```
-python3 ~/.claude/skills/html-para-clickfunnels/escolher_icones_das_listas_no_editor.py --ficha "/private/tmp/claude-501/-Users-<usuario>-Documents-VSCODE-paginas-para-importar-no-gohighlevel/ff1dcd49-32d4-4138-a103-a3d3ec1eab2b/scratchpad/mentoria/saida/ficha-de-importacao.json"
+python3 ~/.claude/skills/html-para-clickfunnels/escolher_icones_das_listas_no_editor.py --ficha "/private/tmp/claude-501/-Users-<usuario>-Documents-VSCODE-paginas-para-importar-no-gohighlevel/abde2f47-911d-416c-83d7-698b76a1276e/scratchpad/regen/ficha-de-importacao.json"
 ```
 
 Ele seleciona cada lista na ordem, escolhe o ícone da tabela e clica em Save no fim. `--simular` só mostra o que faria.

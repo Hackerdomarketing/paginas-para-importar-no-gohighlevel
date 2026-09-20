@@ -803,3 +803,22 @@ Não escrever `width: Npx; max-width: 100%` na mesma regra. Testar as saídas qu
 classe do `lander.css` em vez de inline. É uma sonda curta (uma página com as três grafias) antes de mexer no
 gerador. Enquanto isso, **a estrutura está validada**: o método da planta produz a árvore certa; falta só a largura
 sobreviver ao importador.
+
+## 2026-09-20 — Sonda K respondeu a largura: linha em PORCENTAGEM. Gerador corrigido.
+
+Seis grafias de largura testadas na página publicada (alvo 600px de miolo, container de 1120):
+
+| Grafia | Largura publicada | |
+|---|---|---|
+| K1 `width:Npx; max-width:100%` (a antiga) | 719px | quebrada (vira `width:600px%`) |
+| K2 só `max-width:Npx` | 1120px | ignorada |
+| **K3 `width:N%`** | **571px** | **certa** (mirou 51%, saiu proporcional) |
+| K4 só `width:Npx` | 305px | encolhe demais |
+| K5 `max-width:Npx; width:100%` | 1120px | ignorada |
+| K6 classe `midWideContainer` | 960px | funciona, mas sem controle fino |
+
+**A largura da linha tem que ir em porcentagem do container.** Conserto na skill (`gerador_html_classic.abrir_linha`
++ `gerar_da_planta._montar_linha`): a largura medida em px é convertida para % do container antes de escrever
+(`wideContainer`=1120, `midWideContainer`=960, padrão 1170). A grafia `width:Npx; max-width:100%` foi eliminada.
+Mentoria regenerada: 24 linhas de recorte a 94%, o miolo da carta a 68% (762px ≈ os 760 medidos), recortes de tela
+a 100%; zero ocorrência da grafia antiga. Publicada de novo para reimportar e conferir.
