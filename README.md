@@ -822,3 +822,12 @@ Seis grafias de largura testadas na página publicada (alvo 600px de miolo, cont
 (`wideContainer`=1120, `midWideContainer`=960, padrão 1170). A grafia `width:Npx; max-width:100%` foi eliminada.
 Mentoria regenerada: 24 linhas de recorte a 94%, o miolo da carta a 68% (762px ≈ os 760 medidos), recortes de tela
 a 100%; zero ocorrência da grafia antiga. Publicada de novo para reimportar e conferir.
+
+### Reimportada e conferida (2026-09-20): a largura em % bateu
+
+Reimportada em `https://hackersdomarketing.com/teste2-page`. Larguras de linha medidas na publicada, contra o miolo
+do original: carta 762px (original 700), abertura 762, cashback 392, caixa de preço 672, faixas de tela cheia 1170.
+A proporção geral agora acompanha o original — some o "tudo a 1264px". A altura total do desktop caiu de 22.083 para
+20.427px (original 21.587), sinal de que os blocos pararam de esticar. Pares 03 (cashback) e 08 (carta) conferidos
+lado a lado: fiéis. **A largura, que era o único defeito de proporção da página inteira, está resolvida.** Continua
+em aberto só o celular (regra de ouro 15: seção-foto estica ao empilhar a 390px).
